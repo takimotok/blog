@@ -1,6 +1,6 @@
 ---
 title: 'Next.js, Vercel, GitHubでblog作り直した'
-date: '2022-03-29'
+created_at: '2022-03-29'
 ---
 
 Next.js, Vercel, GitHubでblog作り直した話.
