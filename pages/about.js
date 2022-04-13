@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout, { siteTitle, name } from '../components/layout'
 import Link from 'next/link'
-import aboutStyles from '../styles/pages/about.module.css'
+import aboutStyles from '../styles/pages/about.module.scss'
 import { getPageData } from '../lib/page'
 
 export async function getStaticProps() {

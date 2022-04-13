@@ -2,7 +2,7 @@ import Date from '../components/date'
 import Head from 'next/head'
 import Layout, { siteTitle, name } from '../components/layout'
 import Link from 'next/link'
-import readStyles from '../styles/pages/read.module.css'
+import readStyles from '../styles/pages/read.module.scss'
 import { getPageData } from '../lib/page'
 
 export async function getStaticProps() {
