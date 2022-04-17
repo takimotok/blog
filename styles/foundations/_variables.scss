@@ -1,0 +1,36 @@
+// colors
+// ----------
+// fonts
+$colorText: #dcdcdc !default;
+
+// backgrounds
+$colorBg: #222 !default;
+
+// backgrounds
+$colorInlineCodeBg: #111 !default;
+
+// links
+$colorLink: $colorText !default;
+$colorLinkVisited: darken($colorLink, 15%) !default;
+$colorLinkHover: lighten($colorLink, 15%) !default;
+$colorLinkActive: yellow !default;
+
+// date
+$colorDate: darken($colorText, 15%) !default;
+
+
+// sizes
+// ----------
+// fonts
+$fontSizeBase: 18px !default;
+$fontSizes: (
+  '2xl': 2rem,
+  'xl': 1.6rem,
+  'lg': 1.2rem,
+  'md': 1rem,
+  'sm': 0.8rem,
+  'xs': 0.6rem,
+) !default;
+
+// spaces
+// ----------

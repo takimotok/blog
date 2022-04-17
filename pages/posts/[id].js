@@ -1,8 +1,8 @@
-import Date from '../../components/date'
-import Head from 'next/head'
-import Layout from '../../components/layout'
-import utilStyles from '../../styles/utils.module.scss'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import Date from '@/components/date'
+import HeadPageTitle from '@/components/head_page_title'
+import Layout from '@/components/layout'
+import styles from '@/styles/modules/pages/post.module.scss'
+import { getAllPostIds, getPostData } from '@/lib/posts'
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
@@ -24,12 +24,11 @@ export async function getStaticPaths() {
 export default function Post({ postData }) {
   return (
     <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+      <HeadPageTitle props={postData.title} />
+
+      <article className={`post`}>
+        <h1 className={styles.post__headingLg}>{postData.title}</h1>
+        <div className={styles.post__date}>
           <Date dateString={postData.created_at} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

@@ -1,13 +1,13 @@
-import Date from '../components/date'
-import Head from 'next/head'
+import Date from '@/components/date'
+import HeadPageTitle from '@/components/head_page_title'
 import Image from 'next/image'
-import Layout, { siteTitle, name } from '../components/layout'
+import Layout from '@/components/layout'
 import Link from 'next/link'
-import aboutStyles from '../styles/pages/about.module.scss'
-import { getPageData } from '../lib/page'
+import styles from '@/styles/modules/pages/about.module.scss'
+import { getPageData } from '@/lib/page'
 
 export async function getStaticProps() {
-  // `id` means file name
+  // `id` stands for file name
   // e.g.) file: about.md, id: about
   const pageData = await getPageData('about')
   return {
@@ -18,33 +18,34 @@ export async function getStaticProps() {
 }
 
 export default function About({ pageData }) {
+  const name = process.env.NEXT_PUBLIC_AUTHOR_NAME
+  const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE
+
   return (
     <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+      <HeadPageTitle props={pageData.title} />
 
-      <article>
-        <h1 className={aboutStyles.headingXl}>{pageData.title}</h1>
-        <div className={aboutStyles.lightText}>
+      <article className={`about`}>
+        <h1 className={styles.about__headingLg}>{pageData.title}</h1>
+        <div className={styles.about__date}>
           <Date dateString={pageData.created_at} />
         </div>
 
-        <div className={aboutStyles.profileImageSection}>
+        <div className={styles.about__profile}>
           <Image
             priority
             src="/images/pages/about/prfl.png"
-            className={aboutStyles.borderCircle}
+            className={styles.about__profile__image}
             height={144}
             width={144}
             alt={name}
           />
 
-          <section className={aboutStyles.headingMd}>
+          <section className={styles.about__name}>
             <p>Hi. I'm {name}.</p>
           </section>
 
-          <section className={aboutStyles.snsList}>
+          <section className={styles.about__snsList}>
             <Link href="https://twitter.com/KengoTAKIMOTO">
               <a>twitter</a>
             </Link>
