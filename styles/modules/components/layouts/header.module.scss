@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__siteTitle {
+    padding: 1rem 0;
+  }
+
+  &__navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+
+    &__item {
+      padding: 1rem;
+    }
+  }
+}

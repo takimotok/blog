@@ -1,14 +1,14 @@
+import Footer from '@/components/layouts/footer'
 import Head from 'next/head'
+import Header from '@/components/layouts/header'
 import Link from 'next/link'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-
-export const name = 'Kengo'
-export const siteTitle = 't11o'
+import styles from '@/styles/modules/components/layouts/layout.module.scss'
 
 export default function Layout({ children, home}) {
+  const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -24,35 +24,14 @@ export default function Layout({ children, home}) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        <div className={styles.siteTitle}>
-          <Link href={`/`}>
-            <a>{siteTitle}</a>
-          </Link>
-        </div>
-        <nav>
-          <ul className={styles.navList}>
-            <li className={styles.navListItem}>
-              <Link href={`/about`}>
-                <a>About</a>
-              </Link>
-            </li>
-            <li className={styles.navListItem}>
-              <Link href={`/read`}>
-                <a>Read</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
-    </div>
+
+      <div className={styles.container}>
+        <Header />
+
+        <main>{children}</main>
+
+        { !home && <Footer /> }
+      </div>
+    </>
   )
 }
