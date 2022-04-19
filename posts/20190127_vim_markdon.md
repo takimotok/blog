@@ -44,14 +44,12 @@ vim で markdown を書く時に実現したい動作と, それを可能にし�
 先程洗い出した動作を実現してくれそうな plugin は次の通り.
 
 - [plasticboy/vim-markdown | github.com](https://github.com/plasticboy/vim-markdown)
-    
     - syntax highlighting
     - TOC (Table of Contents) 有効化
     - table フォーマット
     - list indent
     - アウトライン表示
 - [previm/previm | github.com](https://github.com/previm/previm)
-    
     - リアルタイムプレビュー
 
 各 plugin の特徴はリンク先を参照.
@@ -77,14 +75,12 @@ pathogen 自体の inst. 方法は過去に書いた ↓こちら の記事を�
 次の機能を試す.
 
 - [plasticboy/vim-markdown | github.com](https://github.com/plasticboy/vim-markdown)
-    
     - syntax highlighting
     - TOC (Table of Contents) 有効化
     - table フォーマット
     - list indent
     - アウトライン表示
 - [previm/previm | github.com](https://github.com/previm/previm)
-    
     - リアルタイムプレビュー
 
 ### filetype 確認
@@ -142,7 +138,6 @@ TOC フォーマット機能を利用するには少し準備が必要.
 準備は次の2点.
 
 - `.vimrc` に次の一文を追記
-    
     - `filetype plugin on`
 - [godlygeek/tabular](https://github.com/godlygeek/tabular) を plugin として追加
 
@@ -184,18 +179,14 @@ augroup END
 
 - `let` : 値の代入に使う. 今回は変数のスコープの範囲を global に設定するために利用.
 - `g:変数` : 指定した変数のスコープを global にする
-    
     - 今回は Google Chrome を指定
 - `autocmd`
-    
     - vim で 指定したイベントが発生する度に自動実行するコマンドを指定
     - `.vimrc` を load する度にこの定義が走る
-        
         - 同じ定義が何度も走ると, その分無駄な読み込み時間が必要になる
         - ↑これを防ぐために, グルーピングしたコマンド定義先頭で `autocmd!` をする必要がある
     - `autocmd!` で定義の削除
 - `augroup`
-    
     - `autocmd` をグループ化
     - この中で `autocmd!` をすると, グルーピングした定義を全削除してくれる
     - 今回は `PrevimSettings` というグループ名
@@ -211,19 +202,14 @@ augroup END
 vim-markdown plugin の readme を読んでいて便利だと感じた機能やコマンドを紹介.
 
 - `gx`
-    
     - カーソルがある箇所の url リンクをブラウザで開く
     - vim にもとから用意されている `gx` コマンドと違って, `[Example](http://example.com)` のどこにカーソルが在ってもブラウザで開ける
 - `]]`, `[[`
-    
     - 次, 前のヘッダへジャンプ
     - `##`, `###` の間を飛びたいときに
-        
         - ヘッダサイズ(`h2` とか `h3` とか) を問わず行き来可能
 - `[]`, `][`
-    
     - 同レベルのヘッダ間ジャンプ
-        
         - e.g.) `h2` から `h2` へ. `h3` から `h3` へ
     - 1つ目のカッコで方向を, 2つ目のカッコでジャンプ
 
