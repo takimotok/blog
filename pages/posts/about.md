@@ -64,7 +64,7 @@ updated_at:
     - [vim の statusline をオシャレにしたい. lightline.vim の行,列文字色を変更したい](https://kengotakimoto.com/vim-statusline/)
 - R
     - 最近触ってない
-- Python \[star rate="3" max="5" number=1\]
+- Python
     - 最近触ってない
 
 ## 業界での立ち位置

@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   letter-spacing: -0.05rem;
   margin: 0;
-  padding: 1rem 0 0;
+  padding: 1rem 0;
 }
 
 h1 {
@@ -89,21 +89,31 @@ h6 {
 /*
  * list
  */
-ul, ol {
+ul {
+  padding-left: 1.25rem;
   list-style: disc;
+
+  & ul {
+    list-style: circle;
+
+    & ul {
+      list-style: square;
+    }
+  }
 }
 
-ul ul {
-  list-style: circle;
-}
+ol {
+  counter-reset: section;
+  list-style-type: none;
 
-ul ul ul {
-  list-style: square;
-}
+  & > li::before {
+    counter-increment: section;
+    content: counters(section, ".") ". ";
+  }
 
-li > p {
-  padding: 0;
-  margin: 0;
+  & ol {
+    padding-left: 1rem;
+  }
 }
 
 code:not(.hljs) {

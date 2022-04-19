@@ -1,6 +1,6 @@
 @use 'foundations/_variables';
 
-.main {
+.home {
   &__headingLg {
     font-size: map-get(variables.$fontSizes, 2xl);
     padding: 1rem 0;
