@@ -130,10 +130,8 @@ No query specified
 今回の例では
 
 - 親テーブル
-    
     - kinds
 - 子テーブル
-    
     - users
 
 ## 外部キーを使う条件
@@ -196,22 +194,20 @@ ALTER TABLE users ADD CONSTRAINT users_fk_1 FOREIGN KEY (kind_id) REFERENCES kin
 
 には次の4つの値が指定可能.
 
-| 値 | 意味 |
-| :-- | :-- |
-| RESTRICT | 親テーブルに変更を加えた時にエラーを返す.  
-子テーブルへの変更はok |
-| NO ACTION | `RESTRICT` と一緒 |
-| CASCADE | 親テーブルの変更がそのまま子テーブルへも反映される.  
-親テーブルのデータを削除 -> 子テーブルのデータ(レコード)が削除される  
-親テーブルのデータ変更 -> 子テーブルのデータも変更される |
-| SET NULL | 親テーブルの更新・削除 -> 子テーブルへ `NULL` が設定される |
+| 値        | 意味                                                                  |
+|:----------|:----------------------------------------------------------------------|
+| RESTRICT  | 親テーブルに変更を加えた時にエラーを返す. 子テーブルへの変更はok      |
+| NO ACTION | `RESTRICT` と一緒                                                     |
+| CASCADE   | 親テーブルの変更がそのまま子テーブルへも反映される.                   |
+|           | 親テーブルのデータを削除 -> 子テーブルのデータ(レコード)が削除される. |
+|           | 親テーブルのデータ変更 -> 子テーブルのデータも変更される              |
+| SET NULL  | 親テーブルの更新・削除 -> 子テーブルへ `NULL` が設定される            |
 
 ## Cannot add foreign key constraint で怒られた
 
 エラー内容は次の場所で確認可能.
 
 - `SHOW ENGINE INNODB STATUS;`
-    
     - LATEST FOREIGN KEY ERROR
 
 エラー内容は次の通り.
@@ -255,7 +251,10 @@ alter table users change kind_id kind_id int(10) unsigned DEFAULT NULL;
 alter table users add unique (kind_id);
 ```
 
-\*170206 追記 twitterで指摘を頂きました. uniqueにする必要なし
+--- 追記  
+170206  
+twitterで指摘を頂きました. uniqueにする必要なし  
+--- 追記 ここまで
 
 変更ができたか確認.
 
