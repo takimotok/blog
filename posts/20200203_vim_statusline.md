@@ -67,17 +67,18 @@ github の readme に対策が書いてあった.
 折角なので help を眺める.  
 常に status line を前面に表示する設定なんだね.
 
-- `:help laststatus`
+> ```
+> The value of this option influences when the last window will have a  
+> status line:  
+>         0: never  
+>         1: only if there are at least two windows  
+>         2: always  
+> The screen looks nicer with a status line if you have several  
+> windows, but it takes another screen line. |status-line|  
+> ```
+>
+> -- `:help laststatus`
 
-> ```
->     The value of this option influences when the last window will have a  
->     status line:  
->             0: never  
->             1: only if there are at least two windows  
->             2: always  
->     The screen looks nicer with a status line if you have several  
->     windows, but it takes another screen line. |status-line|  
-> ```
 
 ## Colorscheme configuration
 
@@ -179,12 +180,13 @@ separator, subseparator っていうのはこれのこと.
 
 separator, subseparator 各 default 値は help に書いてある
 
-- `:h g:lightline.separator*`
-
 > g:lightline.separator _g:lightline.separator_  
 > g:lightline.subseparator _g:lightline.subseparator_ Dictionaries to store separators.  
 > The default value is let g:lightline.separator = { 'left': '', 'right': '' }  
 > let g:lightline.subseparator = { 'left': '|', 'right': '|' }
+>
+> -- `:h g:lightline.separator*`
+
 
 やってみる.  
 .vimrc をこうする.
@@ -281,8 +283,6 @@ $ git clone https://github.com/ryanoasis/nerd-fonts.git
 
 font を合成する前に nerd-fonts 同梱の font-patcher の使い方を眺める.
 
-- [Option 8: Patch Your Own Font](https://github.com/ryanoasis/nerd-fonts#option-8-patch-your-own-font)
-
 必要そうなオプションはこのへん.
 
 > - \-l, --adjust-line-height
@@ -295,6 +295,9 @@ font を合成する前に nerd-fonts 同梱の font-patcher の使い方を眺�
 >     - Add all available Glyphs
 > - \-out \[OUTPUTDIR\], --outputdir \[OUTPUTDIR\]
 >     - The directory to output the patched font file to
+>
+> -- [Option 8: Patch Your Own Font](https://github.com/ryanoasis/nerd-fonts#option-8-patch-your-own-font)
+
 
 windows 用オプションは不要かも.  
 私のサブ機が win. だから一応作っとく.
@@ -343,7 +346,9 @@ lightline 作者の itchyny さんによると, separtor の色は両側に位�
 
 > Sorry but it's impossible to change the color of separators.  
 > The colors are automatically calculated from the colors of the both sides, in order to provide seamless borders for the patched fonts.  
-> It might be possible by overwriting the highlight of LightLineLeft\_normal\_0\_1 but it's not a clean solution. 引用: https://github.com/itchyny/lightline.vim/issues/85#issuecomment-61940561
+> It might be possible by overwriting the highlight of LightLineLeft\_normal\_0\_1 but it's not a clean solution.
+>
+> -- https://github.com/itchyny/lightline.vim/issues/85#issuecomment-61940561
 
 separator, subseparator 色については一旦完了.  
 今後気になった時に再調査する.
@@ -351,11 +356,12 @@ separator, subseparator 色については一旦完了.
 次に高さ & 横幅のズレについて.  
 これは先に調査している方がいた.
 
-> 2019/12/27 追記  
 > 以下で区切り文字がピッタリ合わないとひたすら文句を言っている部分があるが、  
 > powerline用フォントの表示が「微妙に」ずれるのはambiguous widthかどうかは関係なくターミナルとフォントの相性によるようだ。  
-> フォントサイズや解像度、フォント合成に使っãpatcher等で容易にずれる。  
-> そもそもpowerlineの区切り文字を合わせる際に無理をしているので高さが合わないことがある。 引用: [Nerd fontとpowerlineとambiguous width](https://qiita.com/s417-lama/items/b38089a42fe7d4a061da)
+> フォントサイズや解像度、フォント合成に使ったpatcher等で容易にずれる。  
+> そもそもpowerlineの区切り文字を合わせる際に無理をしているので高さが合わないことがある。
+>
+> -- [Nerd fontとpowerlineとambiguous width](https://qiita.com/s417-lama/items/b38089a42fe7d4a061da)
 
 私は一旦コレでよしとした.  
 諦めきれない場合はこの方が [自分だけのPowerline](https://qiita.com/s417-lama/items/19795d15df3f03149bce) というクールな記事を書いているので参照されたし.
@@ -374,12 +380,12 @@ opacity を変えずに lightline scheme 設定を変えてみる.
 まず help を眺める.
 
 > In general, each palette follows the following style:
-> 
+>
 > ```
->     let s:p.{mode}.{where} = [ [ {guifg}, {guibg}, {ctermfg}, {ctermbg} ], ... ]
+> let s:p.{mode}.{where} = [ [ {guifg}, {guibg}, {ctermfg}, {ctermbg} ], ... ]
 > ```
-> 
-> 引用 `:h lightline-colorscheme`
+>
+> -- `:h lightline-colorscheme`
 
 `guifg` が今回の変更対象箇所.
 
