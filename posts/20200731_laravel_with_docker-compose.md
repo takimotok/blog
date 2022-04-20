@@ -375,7 +375,9 @@ node.js はコミット先プロジェクトの関係で `8.11.3` を指定.
 迂闊なファイル名にすると .sock ができずにハマる.
 
 > fpm の設定ファイルを zzz-www.conf としていますが、これは 公式イメージが zz-docker.conf で listen 設定をぶっ潰しているのに対抗するためです。  
-> 後に読まれたものが勝つので。 [docker-compose を使って（なるべく）公式イメージで PHP 開発環境を作った](https://qiita.com/hidekuro/items/46c00dec350c4a37fbb1#php)
+> 後に読まれたものが勝つので。
+>
+> -- [docker-compose を使って（なるべく）公式イメージで PHP 開発環境を作った](https://qiita.com/hidekuro/items/46c00dec350c4a37fbb1#php)
 
 上記のサイトを参考に, 辞書順で後ろに来るように `zzz-www.conf` というファイル名にした.  
 実行ユーザは `www-data` に統一.

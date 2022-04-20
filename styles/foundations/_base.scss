@@ -121,7 +121,22 @@ ol {
   }
 }
 
+/*
+ * code
+ */
 code:not(.hljs) {
   background-color: variables.$colorInlineCodeBg;
   padding: 0 0.5rem;
+}
+
+/*
+ * blockquote
+ */
+blockquote {
+  border-left: thin darken(variables.$colorBorder, 10%) solid;
+  padding: 1rem;
+  background-color: rgba(lighten(variables.$colorBg, 50%), 0.1);
+  color: darken(variables.$colorText, 10%);
+  font-size: 90%;
+  font-style: italic;
 }
