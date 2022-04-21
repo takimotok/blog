@@ -68,7 +68,9 @@ Laravelで多対多のデータを扱いたい.
 たとえば, `users`, `roles` という2テーブルで多対多のrelationを定義したい場合は  
 `role_user`という中間テーブルが必要になる.
 
-> users,roles,role\_userの３テーブルがこの関係には必要です. 引用: [多対多 | readouble.com](https://readouble.com/laravel/5.3/ja/eloquent-relationships.html#many-to-many)
+> users,roles,role\_userの３テーブルがこの関係には必要です.
+>
+> -- [多対多 | readouble.com](https://readouble.com/laravel/5.3/ja/eloquent-relationships.html#many-to-many)
 
 つまり, 今回作成する中間テーブル(`facility_shop`)には次のカラムを持つ必要がある.
 
