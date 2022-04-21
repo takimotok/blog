@@ -183,7 +183,9 @@ public function getIndex() {
 基本的にはモデルインスタンスを作成して使用するメソッド.  
 つまり `new` してから使うということ.
 
-> モデルから新しいレコードを作成するには新しいインスタンスを作成し、saveメソッドを呼び出します。 引用: [Laravel 5.3 Eloquent：利用の開始 | readouble.com](https://readouble.com/laravel/5.3/ja/eloquent.html)
+> モデルから新しいレコードを作成するには新しいインスタンスを作成し、saveメソッドを呼び出します。
+>
+> -- [Laravel 5.3 Eloquent：利用の開始 | readouble.com](https://readouble.com/laravel/5.3/ja/eloquent.html)
 
 ### 特徴
 
@@ -319,7 +321,9 @@ mysql> select * from users;
 
 ### 複数代入 = 入力フォーム項目名と同名カラムに一気にデータを突っ込むこと
 
-> フォームの入力名とデータベースのカラム名を同じにして、入力値をデータベース（もしくはORMがインスタンスのモデル）へ一気に代入してしまおうと言うアイデア 引用: [Eloquentの複数代入のリスク | kore1server.com](https://kore1server.com/336/Eloquent%E3%81%AE%E8%A4%87%E6%95%B0%E4%BB%A3%E5%85%A5%E3%81%AE%E3%83%AA%E3%82%B9%E3%82%AF)
+> フォームの入力名とデータベースのカラム名を同じにして、入力値をデータベース（もしくはORMがインスタンスのモデル）へ一気に代入してしまおうと言うアイデア
+>
+> -- [Eloquentの複数代入のリスク | kore1server.com](https://kore1server.com/336/Eloquent%E3%81%AE%E8%A4%87%E6%95%B0%E4%BB%A3%E5%85%A5%E3%81%AE%E3%83%AA%E3%82%B9%E3%82%AF)
 
 kore1server.com 管理人の川瀬裕久さんは 本記事でたくさん引用している [readouble.com](https://readouble.com/) の日本語翻訳者.  
 いつもお世話になっております.
@@ -488,7 +492,9 @@ mysql> select * from users;
 
 - 複数レコードを一気に格納可能
 
-> 配列の配列をinsertに渡して呼び出すことで、テーブルにたくさんのレコードを一度にまとめて挿入できます。 引用: [Laravel 5.3 データベース：クエリビルダ | readouble.com](https://readouble.com/laravel/5.3/ja/queries.html)
+> 配列の配列をinsertに渡して呼び出すことで、テーブルにたくさんのレコードを一度にまとめて挿入できます。
+>
+> -- [Laravel 5.3 データベース：クエリビルダ | readouble.com](https://readouble.com/laravel/5.3/ja/queries.html)
 
 使用例は次の通り.  
 ↑ココと同じページから引用.
