@@ -1,6 +1,12 @@
+@use 'foundations/_variables';
+
 .header {
   display: flex;
   justify-content: space-between;
+
+  a {
+    color: variables.$colorText;
+  }
 
   &__siteTitle {
     padding: 1rem 0;
