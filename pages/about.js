@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Layout from '@/components/layout'
 import Link from 'next/link'
 import styles from '@/styles/modules/pages/about.module.scss'
+import { Twitter, GitHub } from 'react-feather';
 import { getPageData } from '@/lib/page'
 
 export async function getStaticProps() {
@@ -47,10 +48,10 @@ export default function About({ pageData }) {
 
           <section className={styles.about__snsList}>
             <Link href="https://twitter.com/KengoTAKIMOTO">
-              <a>twitter</a>
+              <a><Twitter className={styles.about__snsList__icon} /></a>
             </Link>
             <Link href="https://github.com/takimotok">
-              <a>github</a>
+              <a><GitHub className={styles.about__snsList__icon} /></a>
             </Link>
           </section>
         </div>
