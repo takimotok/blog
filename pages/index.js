@@ -26,12 +26,12 @@ export default function Home({ allPostsData }) {
         <ul className={styles.home__list}>
           {allPostsData.map(({ id, created_at, title }) => (
             <li className={styles.home__list__item} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
               <small className={styles.home__list__item__date}>
                 <Date dateString={created_at} />
               </small>
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
             </li>
           ))}
         </ul>
