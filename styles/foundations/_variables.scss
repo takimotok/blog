@@ -12,7 +12,7 @@ $colorInlineCodeBg: #111 !default;
 $colorBorder: $colorText !default;
 
 // links
-$colorLink: $colorText !default;
+$colorLink: lighten(#4accff, 15%) !default;
 $colorLinkVisited: darken($colorLink, 15%) !default;
 $colorLinkHover: lighten($colorLink, 15%) !default;
 $colorLinkActive: yellow !default;
