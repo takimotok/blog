@@ -126,6 +126,7 @@ ol {
 table {
   display: block;
   overflow-x: auto;
+  overflow-x: scroll;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
