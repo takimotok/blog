@@ -121,6 +121,38 @@ ol {
 }
 
 /*
+ * table
+ */
+table {
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: 1rem 0;
+
+  thead {
+    th {
+      padding: .5rem;
+      border-bottom: 0.2rem variables.$colorText double;
+      background-color: rgba(lighten(variables.$colorBg, 50%), 0.1);
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: .5rem;
+      }
+
+      &:nth-of-type(even) td {
+        background-color: rgba(lighten(variables.$colorBg, 50%), 0.1);
+      }
+    }
+  }
+}
+
+/*
  * code
  */
 code:not(.hljs) {
