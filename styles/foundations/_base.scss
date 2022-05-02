@@ -3,7 +3,7 @@
 @use 'foundations/_variables';
 @use 'foundations/_mixins';
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -156,9 +156,53 @@ table {
 /*
  * code
  */
-code:not(.hljs) {
-  background-color: variables.$colorInlineCodeBg;
-  padding: 0 0.5rem;
+code {
+  // RictyDiminished Regular
+  @font-face {
+    font-family: "Ricty Diminished";
+    src: url('../../assets/fonts/RictyDiminished/RictyDiminished-Regular.ttf') format('truetype'),
+      url('../../assets/fonts/RictyDiminished/RictyDiminishedDiscord-Regular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  // RictyDiminished Bold
+  @font-face {
+    font-family: "Ricty Diminished";
+    src: url('../../assets/fonts/RictyDiminished/RictyDiminished-Bold.ttf') format('truetype'),
+      url('../../assets/fonts/RictyDiminished/RictyDiminishedDiscord-Bold.ttf') format('truetype');
+
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  // RictyDiminished Italic
+  @font-face {
+    font-family: "Ricty Diminished";
+    src: url('../../assets/fonts/RictyDiminished/RictyDiminished-Oblique.ttf') format('truetype'),
+      url('../../assets/fonts/RictyDiminished/RictyDiminishedDiscord-Oblique.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  // RictyDiminished Bold & Italic
+  @font-face {
+    font-family: "Ricty Diminished";
+    src: url('../../assets/fonts/RictyDiminished/RictyDiminished-BoldOblique.ttf') format('truetype'),
+      url('../../assets/fonts/RictyDiminished/RictyDiminishedDiscord-BoldOblique.ttf') format('truetype');
+
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  font-size: map-get(variables.$fontSizes, md);
+
+  &:not(.hljs) {
+    background-color: variables.$colorInlineCodeBg;
+    padding: 0 0.5rem;
+  }
 }
 
 /*
