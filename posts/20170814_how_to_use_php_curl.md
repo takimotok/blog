@@ -8,8 +8,6 @@ created_at: '2017-08-14'
 
 コマンドラインからも実行可能だが, 今回はPHPで利用する場合を想定.
 
-概要は次の通り.
-
 ## 参考
 
 - [curl_setopt | php.net](http://php.net/manual/ja/function.curl-setopt.php)

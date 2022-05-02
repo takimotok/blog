@@ -4,8 +4,7 @@ tags: ['vim']
 created_at: '2020-02-03'
 ---
 
-vim の statusline をオシャレにしたいので lightline を導入する.  
-概要は次の通り.
+vim の statusline をオシャレにしたいので lightline を導入する.
 
 ## 動作環境
 

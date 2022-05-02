@@ -4,8 +4,7 @@ tags: ['phpunit', 'centos']
 created_at: '2018-05-07'
 ---
 
-phpunitを使うための準備を行う.  
-概要は次の通り.
+phpunitを使うための準備を行う.
 
 ## 動作環境
 
