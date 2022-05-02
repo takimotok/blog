@@ -7,8 +7,6 @@ created_at: '2020-03-31'
 google calendar への予定入力手間削減のために GAS (Google Apps Script) を書いた.  
 予定が記入された spread sheet から google calendar へボタン一つで登録するためのスクリプト.
 
-概要は次の通り.
-
 ## 結論
 
 --- 追記

@@ -7,8 +7,6 @@ created_at: '2019-01-27'
 vim で markdown を書きたい.  
 そのための環境構築を行う.
 
-概要は次の通り.
-
 ## 動作環境
 
 - macOS Mojave 10.14.x

@@ -4,8 +4,7 @@ tags: ['composer', 'laravel', 'php']
 created_at: '2018-04-22'
 ---
 
-facebook/webdriver の inst. 中に怒られたので原因調査.  
-概要は次の通り.
+facebook/webdriver の inst. 中に怒られたので原因調査.
 
 ## 動作環境
 

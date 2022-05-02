@@ -7,8 +7,6 @@ created_at: '2018-05-26'
 matplotlib 使おうとしたら No module named '\_bz2' エラーで怒られた.  
 環境構築でハマることが多いな...
 
-概要は次の通り.
-
 ## 動作環境
 
 - CentOS 7

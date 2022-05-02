@@ -8,8 +8,6 @@ docker で container 間通信をするには対象 container を同一 network 
 本記事では静的ページ, wordpress, phpmyadmin へのリクエストを nginx の reverse proxy で振り分ける.  
 単体の container 操作や docker network に詳しくなるために docker-compose は使わない方針.
 
-概要は次の通り.
-
 ## 結論
 
 こんな構成にした. この数の container を管理するなら docker-compose を使った方がいい.

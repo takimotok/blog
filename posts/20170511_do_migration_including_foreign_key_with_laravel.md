@@ -16,8 +16,6 @@ migrationファイルの基本的な文法については以前記事にまと�
 
 [https://kengotakimoto.com/post-2375/](https://kengotakimoto.com/post-2375/)
 
-概要は次の通り.
-
 ## 動作環境
 
 - centOS6.8

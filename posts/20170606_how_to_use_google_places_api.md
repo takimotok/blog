@@ -9,8 +9,6 @@ Google Places APIが自分の目的に適うかを知りたかったので技術
 
 最終目標は東京都内のカフェ情報取得.
 
-概要は次の通り.
-
 ## 参考
 
 - 公式ドキュメント :Google Places API Web Service
