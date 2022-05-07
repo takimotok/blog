@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Layout from '@/components/layout'
 import Link from 'next/link'
 import styles from '@/styles/modules/pages/about.module.scss'
+import { AUTHOR_NAME } from '@/constants/Authors'
 import { Twitter, GitHub } from 'react-feather';
 import { getPageData } from '@/lib/page'
 
@@ -19,12 +20,9 @@ export async function getStaticProps() {
 }
 
 export default function About({ pageData }) {
-  const name = process.env.NEXT_PUBLIC_AUTHOR_NAME
-  const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE
-
   return (
     <Layout>
-      <HeadPageTitle props={pageData.title} />
+      <HeadPageTitle title={pageData.title} />
 
       <article className={`about`}>
         <h1 className={styles.about__headingLg}>{pageData.title}</h1>
@@ -39,11 +37,11 @@ export default function About({ pageData }) {
             className={styles.about__profile__image}
             height={144}
             width={144}
-            alt={name}
+            alt={AUTHOR_NAME}
           />
 
           <section className={styles.about__name}>
-            <p>Hi. I'm {name}.</p>
+            <p>Hi. I'm {AUTHOR_NAME}.</p>
           </section>
 
           <section className={styles.about__snsList}>

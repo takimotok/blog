@@ -17,11 +17,9 @@ export async function getStaticProps() {
 }
 
 export default function Read({ pageData }) {
-  const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE
-
   return (
     <Layout>
-      <HeadPageTitle props={pageData.title} />
+      <HeadPageTitle title={pageData.title} />
 
       <article className={`read`}>
         <h1 className={styles.read__headingLg}>{pageData.title}</h1>

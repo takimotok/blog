@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 export default function Post({ postData }) {
   return (
     <Layout>
-      <HeadPageTitle props={postData.title} />
+      <HeadPageTitle title={postData.title} />
 
       <article className={`post`}>
         <h1 className={styles.post__headingLg}>{postData.title}</h1>

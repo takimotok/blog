@@ -15,8 +15,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
-  const siteTitle = process.env.SITE_TITLE
-
   return (
     <Layout home>
       <HeadPageTitle />

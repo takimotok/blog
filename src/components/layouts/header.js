@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import styles from '@/styles/modules/components/layouts/header.module.scss'
+import { SITE_TITLE } from '@/constants/Sites'
 
 export default function Header() {
-  const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE
-
   return (
       <header className={styles.header}>
         <div className={styles.header__siteTitle}>
           <Link href={`/`}>
-            <a>{siteTitle}</a>
+            <a>{SITE_TITLE}</a>
           </Link>
         </div>
         <nav>

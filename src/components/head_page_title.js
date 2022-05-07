@@ -1,12 +1,13 @@
 import Head from 'next/head'
+import { SITE_TITLE } from '@/constants/Sites'
 
-export default function HeadPageTitle({ props=null }) {
-  const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE
+export default function HeadPageTitle (props=null) {
+  const { title } = props
 
   return (
       <Head>
         <title>
-          {!props ? `${siteTitle}` : `${props} | ${siteTitle}`}
+          {!title ? `${SITE_TITLE}` : `${title} | ${SITE_TITLE}`}
         </title>
       </Head>
   )
