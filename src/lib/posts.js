@@ -7,19 +7,19 @@ import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import { POSTS_DIRECTORY } from '@/constants/Paths';
 import { unified } from 'unified';
-
-const postsDirectory = path.join(process.cwd(), 'posts')
 
 export function getSortedPostsData() {
   // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(POSTS_DIRECTORY)
+
   const allPostsData = fileNames.map(fileName => {
     // Remove "prefix (date)" and ".md" from file name to get id
     const id = fileName.replace(/\d{8}_([\w\-]+)\.md$/, '$1')
 
     // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
+    const fullPath = path.join(POSTS_DIRECTORY, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
     // Use gray-matter to parse the post metadata section
@@ -44,7 +44,7 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(POSTS_DIRECTORY)
 
   // Returns an array that looks like this:
   // [
@@ -74,7 +74,7 @@ export async function getPostData(id) {
   // e.g.)
   //  id: 1st-post
   //  fileName: 20220406_1st-post
-  const pattern = path.join(postsDirectory, `*_${id}.md`)
+  const pattern = path.join(POSTS_DIRECTORY, `*_${id}.md`)
   const fullPath = path.join(glob.sync(pattern).shift())
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 

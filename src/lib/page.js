@@ -6,14 +6,15 @@ import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import { PAGES_DIRECTORY } from '@/constants/Paths';
 import { unified } from 'unified';
 
-const postsDirectory = path.join(process.cwd(), 'pages', 'posts')
 
 // `id` argument means file name
 // e.g.) file: about.md, id: about
+// note: Extensions must be .md
 export async function getPageData(id) {
-  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fullPath = path.join(PAGES_DIRECTORY, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
