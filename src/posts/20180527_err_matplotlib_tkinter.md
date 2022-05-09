@@ -2,6 +2,7 @@
 title: "matplotlib 使おうとしたら No module named '_tkinter' エラーで怒られた"
 tags: ['python']
 created_at: '2018-05-27'
+updated_at: ''
 ---
 
 matplotlib 使おうとしたら No module named '\_tkinter' エラーで怒られた.  

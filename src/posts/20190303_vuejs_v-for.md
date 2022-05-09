@@ -2,6 +2,7 @@
 title: 'Vue.js v-for で Object と配列を展開してみる'
 tags: ['vue.js']
 created_at: '2019-03-03'
+updated_at: ''
 ---
 
 Vue.js の `v-for` で次の場合をそれぞれ試してみた.

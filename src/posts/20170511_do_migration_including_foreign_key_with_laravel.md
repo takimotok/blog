@@ -2,6 +2,7 @@
 title: 'Laravel 外部キーを含むテーブルを migration ファイルで作成する'
 tags: ['laravel']
 created_at: '2017-05-11'
+updated_at: ''
 ---
 
 仕様が変わる度にDB構造も変化しちゃう.  

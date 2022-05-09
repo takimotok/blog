@@ -2,6 +2,7 @@
 title: "matplotlib 使おうとしたら No module named '_bz2' エラーで怒られた"
 tags: ['python']
 created_at: '2018-05-26'
+updated_at: ''
 ---
 
 matplotlib 使おうとしたら No module named '\_bz2' エラーで怒られた.  

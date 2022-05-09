@@ -2,6 +2,7 @@
 title: 'Laravel migrationファイルの基本的な書き方'
 tags: ['laravel']
 created_at: '2017-05-10'
+updated_at: ''
 ---
 
 デフォルトで用意されているmigrationファイルを眺めて基本的な書き方を学ぶ.

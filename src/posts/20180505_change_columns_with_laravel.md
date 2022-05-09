@@ -2,6 +2,7 @@
 title: 'laravel migrationでcolumn変更'
 tags: ['laravel']
 created_at: '2018-05-05'
+updated_at: ''
 ---
 
 Laravelでは、デフォルトのままではカラム変更のマイグレーションは行えない.  

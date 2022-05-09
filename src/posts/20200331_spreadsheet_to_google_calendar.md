@@ -2,6 +2,7 @@
 title: 'spreadsheet から google calendar へスケジュールを一括登録する'
 tags: ['spreadsheet', 'google calendar']
 created_at: '2020-03-31'
+updated_at: ''
 ---
 
 google calendar への予定入力手間削減のために GAS (Google Apps Script) を書いた.  

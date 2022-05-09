@@ -2,6 +2,7 @@
 title: 'MySQL Cannot add foreign key constraint で怒られた'
 tags: ['mysql']
 created_at: '2017-02-06'
+updated_at: ''
 ---
 
 外部キー設定作業中にハマったのでメモ.  

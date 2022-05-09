@@ -2,6 +2,7 @@
 title: 'vim の statusline をオシャレにしたい. lightline.vim の行,列文字色を変更したい'
 tags: ['vim']
 created_at: '2020-02-03'
+updated_at: ''
 ---
 
 vim の statusline をオシャレにしたいので lightline を導入する.

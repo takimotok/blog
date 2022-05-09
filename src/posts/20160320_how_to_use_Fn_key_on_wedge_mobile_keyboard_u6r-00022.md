@@ -2,6 +2,7 @@
 title: 'Wedge Mobile Keyboard U6R-00022のFnキーで悩んだときの解決方法'
 tags: ['keyboard']
 created_at: '2016-03-20'
+updated_at: ''
 ---
 
 先日購入したキーボードをもっと使いやすくしたい.

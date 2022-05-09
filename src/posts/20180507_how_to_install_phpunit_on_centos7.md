@@ -2,6 +2,7 @@
 title: 'centos7 に phpunit をインストールする方法'
 tags: ['phpunit', 'centos']
 created_at: '2018-05-07'
+updated_at: ''
 ---
 
 phpunitを使うための準備を行う.

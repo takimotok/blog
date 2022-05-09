@@ -2,6 +2,7 @@
 title: 'vim で cursorline を hightlight するために help を眺める'
 tags: ['vim']
 created_at: '2019-01-28'
+updated_at: ''
 ---
 
 他のエディタでは意識せずともカーソルのある行がハイライトされる.  

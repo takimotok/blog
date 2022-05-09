@@ -2,6 +2,7 @@
 title: 'Gitlab commitメッセージに issue ID を自動で紐付ける'
 tags: ['git', 'gitlab']
 created_at: '2018-02-14'
+updated_at: ''
 ---
 
 Gitlabにissueを作って, ブランチを切って作業.  

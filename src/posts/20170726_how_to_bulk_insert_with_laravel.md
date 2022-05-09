@@ -2,6 +2,7 @@
 title: 'Laravel 複数レコードを一気にDBへ格納する方法'
 tags: ['laravel']
 created_at: '2017-07-26'
+updated_at: ''
 ---
 
 Laravelで複数レコードを一気にテーブルに追加したい.  

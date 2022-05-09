@@ -2,6 +2,7 @@
 title: 'laravel seederの方法: ディレクトリ構成'
 tags: ['laravel']
 created_at: '2018-05-13'
+updated_at: ''
 ---
 
 seederを行う前に, まずlaravelのディレクトリ構成について知っておいた方がいい.  

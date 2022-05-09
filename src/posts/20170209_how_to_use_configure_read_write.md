@@ -2,6 +2,7 @@
 title: '[cakePHP] Configure::read, write の使い方/ No variable $config found'
 tags: ['CakePHP']
 created_at: '2017-02-09'
+updated_at: ''
 ---
 
 google OAuth2.0 を利用する際に clientId, clientSecret を定数化して任意の場所から呼び出したかった.  

@@ -2,6 +2,7 @@
 title: 'Laravel5.3 自作class使用方法'
 tags: ['laravel']
 created_at: '2017-04-17'
+updated_at: ''
 ---
 
 ローカル開発環境で自作classの作成・呼び出しを行いたい.  

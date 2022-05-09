@@ -2,6 +2,7 @@
 title: 'Laravel 多対多のrelationを実現する方法'
 tags: ['laravel']
 created_at: '2017-05-17'
+updated_at: ''
 ---
 
 Laravelで多対多のデータを扱いたい.  

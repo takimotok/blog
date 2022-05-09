@@ -2,6 +2,7 @@
 title: 'vim で markdown 環境を整える'
 tags: ['vim', 'markdown']
 created_at: '2019-01-27'
+updated_at: ''
 ---
 
 vim で markdown を書きたい.  

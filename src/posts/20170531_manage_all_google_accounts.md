@@ -2,6 +2,7 @@
 title: 'Gmail 複数アカウント 一括管理方法'
 tags: ['google']
 created_at: '2017-05-31'
+updated_at: ''
 ---
 
 開発用アカウント, プライベート用アカウント, etc... など.  

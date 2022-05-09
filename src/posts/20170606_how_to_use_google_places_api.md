@@ -2,6 +2,7 @@
 title: 'Google Places APIの基礎'
 tags: ['api', 'google']
 created_at: '2017-06-06'
+updated_at: ''
 ---
 
 Google Places APIが自分の目的に適うかを知りたかったので技術検証.  
