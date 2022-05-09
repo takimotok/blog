@@ -1,5 +1,6 @@
 ---
 title: 'Next.js, Vercel, GitHubでblog作り直した'
+tags: ['next.js', 'vercel', 'github']
 created_at: '2022-03-29'
 updated_at: ''
 ---
