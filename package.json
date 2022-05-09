@@ -21,5 +21,10 @@
     "remark-rehype": "^10.1.0",
     "sass": "^1.50.0",
     "unified": "^10.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.33",
+    "@types/react": "^18.0.9",
+    "typescript": "^4.6.4"
   }
 }
