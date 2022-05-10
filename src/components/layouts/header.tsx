@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from '@/styles/modules/components/layouts/header.module.scss'
 import { SITE_TITLE } from '@/constants/Sites'
 
-export default function Header() {
+export const Header = () => {
   return (
       <header className={styles.header}>
         <div className={styles.header__siteTitle}>

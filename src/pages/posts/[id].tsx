@@ -1,27 +1,30 @@
-import Date from '@/components/date'
-import HeadPageTitle from '@/components/head_page_title'
-import Layout from '@/components/layout'
-import styles from '@/styles/modules/pages/post.module.scss'
+import { Date } from '@/components/date'
+import { HeadPageTitle } from '@/components/head_page_title'
+import { Layout } from '@/components/layout'
 import { getAllPostIds, getPostData } from '@/lib/posts'
+import styles from '@/styles/modules/pages/post.module.scss'
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async props => {
+  const { params } = props
   const postData = await getPostData(params.id)
+
   return {
-    props: {
-      postData
-    }
+    props: { postData }
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const paths = getAllPostIds()
+
   return {
     paths,
     fallback: false
   }
 }
 
-export default function Post({ postData }) {
+export default function Post(props) {
+  const { postData } = props
+
   return (
     <Layout>
       <HeadPageTitle title={postData.title} />

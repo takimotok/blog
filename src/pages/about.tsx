@@ -1,25 +1,25 @@
-import Date from '@/components/date'
-import HeadPageTitle from '@/components/head_page_title'
 import Image from 'next/image'
-import Layout from '@/components/layout'
 import Link from 'next/link'
-import styles from '@/styles/modules/pages/about.module.scss'
 import { AUTHOR_NAME } from '@/constants/Authors'
+import { Date } from '@/components/date'
+import { HeadPageTitle } from '@/components/head_page_title'
+import { Layout } from '@/components/layout'
 import { Twitter, GitHub } from 'react-feather';
 import { getPageData } from '@/lib/page'
+import styles from '@/styles/modules/pages/about.module.scss'
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   // `id` stands for file name
   // e.g.) file: about.md, id: about
   const pageData = await getPageData('about')
   return {
-    props: {
-      pageData
-    }
+    props: { pageData }
   }
 }
 
-export default function About({ pageData }) {
+export default function About(props) {
+  const { pageData } = props
+
   return (
     <Layout>
       <HeadPageTitle title={pageData.title} />

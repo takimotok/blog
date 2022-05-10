@@ -1,20 +1,21 @@
-import Date from '@/components/date'
-import HeadPageTitle from '@/components/head_page_title'
-import Layout from '@/components/layout'
 import Link from 'next/link'
-import styles from '@/styles/modules/pages/home.module.scss'
+import { Date } from '@/components/date'
+import { HeadPageTitle } from '@/components/head_page_title'
+import { Layout } from '@/components/layout'
 import { getSortedPostsData } from '@/lib/posts'
+import type { Post } from '@/types/Post'
+import styles from '@/styles/modules/pages/home.module.scss'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+export const getStaticProps = async () => {
+  const posts: Post[] = getSortedPostsData()
   return {
-    props: {
-      allPostsData
-    }
+    props: { posts }
   }
 }
 
-export default function Home({ allPostsData }) {
+export default function Home(props: Post[]) {
+  const { posts } = props
+
   return (
     <Layout home>
       <HeadPageTitle />
@@ -22,7 +23,7 @@ export default function Home({ allPostsData }) {
       <section className={styles.home}>
         <h2 className={styles.home__headingLg}>Blog</h2>
         <ul className={styles.home__list}>
-          {allPostsData.map(({ id, created_at, title }) => (
+          {posts.map(({ id, created_at, title }) => (
             <li className={styles.home__list__item} key={id}>
               <small className={styles.home__list__item__date}>
                 <Date dateString={created_at} />

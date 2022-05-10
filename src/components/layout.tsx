@@ -1,11 +1,13 @@
-import Footer from '@/components/layouts/footer'
 import Head from 'next/head'
-import Header from '@/components/layouts/header'
 import Link from 'next/link'
 import styles from '@/styles/modules/components/layouts/layout.module.scss'
+import { Footer } from '@/components/layouts/footer'
+import { Header } from '@/components/layouts/header'
 import { SITE_TITLE } from '@/constants/Sites'
 
-export default function Layout({ children, home}) {
+export const Layout = props => {
+  const { children, home } = props
+
   return (
     <>
       <Head>

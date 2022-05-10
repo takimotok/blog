@@ -9,18 +9,19 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { POSTS_DIRECTORY } from '@/constants/Paths';
 import { unified } from 'unified';
+import type { Post } from '@/types/Post';
 
-export function getSortedPostsData() {
+export const getSortedPostsData: Post[] = () => {
   // Get file names under /posts
-  const fileNames = fs.readdirSync(POSTS_DIRECTORY)
+  const fileNames: string[] = fs.readdirSync(POSTS_DIRECTORY)
 
-  const allPostsData = fileNames.map(fileName => {
+  const allPostsData: Post[] = fileNames.map(fileName => {
     // Remove "prefix (date)" and ".md" from file name to get id
-    const id = fileName.replace(/\d{8}_([\w\-]+)\.md$/, '$1')
+    const id: string = fileName.replace(/\d{8}_([\w\-]+)\.md$/, '$1')
 
     // Read markdown file as string
-    const fullPath = path.join(POSTS_DIRECTORY, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const fullPath: string = path.join(POSTS_DIRECTORY, fileName)
+    const fileContents: string = fs.readFileSync(fullPath, 'utf8')
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
@@ -31,6 +32,7 @@ export function getSortedPostsData() {
       ...matterResult.data
     }
   })
+
   // Sort posts by created_at
   return allPostsData.sort(({ created_at: a }, { created_at: b }) => {
     if (a < b) {
@@ -43,22 +45,9 @@ export function getSortedPostsData() {
   })
 }
 
-export function getAllPostIds() {
-  const fileNames = fs.readdirSync(POSTS_DIRECTORY)
+export const getAllPostIds = () => {
+  const fileNames: string[] = fs.readdirSync(POSTS_DIRECTORY)
 
-  // Returns an array that looks like this:
-  // [
-  //   {
-  //     params: {
-  //       id: '1st-post-fileName'
-  //     }
-  //   },
-  //   {
-  //     params: {
-  //       id: '2nd-post-fileName'
-  //     }
-  //   }
-  // ]
   return fileNames.map(fileName => {
     return {
       params: {
@@ -68,15 +57,15 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostData(id) {
+export const getPostData = async (id: string) => {
   // id は fileName から日付を除いたものなので,
   // glob で対象 dir. を検索して fullPath を取得する.
   // e.g.)
   //  id: 1st-post
   //  fileName: 20220406_1st-post
-  const pattern = path.join(POSTS_DIRECTORY, `*_${id}.md`)
-  const fullPath = path.join(glob.sync(pattern).shift())
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const pattern: string = path.join(POSTS_DIRECTORY, `*_${id}.md`)
+  const fullPath: string = path.join(glob.sync(pattern).shift())
+  const fileContents: string = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
@@ -85,7 +74,7 @@ export async function getPostData(id) {
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkRehype, {footnoteLabel: 'Footnotes'})
+    .use(remarkRehype, { footnoteLabel: 'Footnotes' })
     .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(matterResult.content);

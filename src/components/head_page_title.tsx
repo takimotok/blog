@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { SITE_TITLE } from '@/constants/Sites'
 
-export default function HeadPageTitle (props=null) {
+export const HeadPageTitle = (props=null) => {
   const { title } = props
 
   return (
