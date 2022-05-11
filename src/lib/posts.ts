@@ -11,7 +11,7 @@ import { POSTS_DIRECTORY } from '@/constants/Paths';
 import { unified } from 'unified';
 import type { Post } from '@/types/pages/index';
 
-export const getSortedPostsData: Post[] = () => {
+export const getSortedPostsData = () => {
   // Get file names under /posts
   const fileNames: string[] = fs.readdirSync(POSTS_DIRECTORY)
 
