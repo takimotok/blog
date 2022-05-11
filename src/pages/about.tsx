@@ -6,18 +6,20 @@ import { HeadPageTitle } from '@/components/head_page_title'
 import { Layout } from '@/components/layout'
 import { Twitter, GitHub } from 'react-feather';
 import { getPageData } from '@/lib/page'
+import type { AboutProps, PageDataProps } from '@/types/pages/about'
 import styles from '@/styles/modules/pages/about.module.scss'
 
 export const getStaticProps = async () => {
   // `id` stands for file name
   // e.g.) file: about.md, id: about
-  const pageData = await getPageData('about')
+  const pageData: PageDataProps = await getPageData('about')
+
   return {
     props: { pageData }
   }
 }
 
-export default function About(props) {
+export default function About(props: AboutProps) {
   const { pageData } = props
 
   return (

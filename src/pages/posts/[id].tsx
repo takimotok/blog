@@ -1,12 +1,14 @@
 import { Date } from '@/components/date'
+import { FC } from 'react'
 import { HeadPageTitle } from '@/components/head_page_title'
 import { Layout } from '@/components/layout'
 import { getAllPostIds, getPostData } from '@/lib/posts'
+import type { PostProps, StaticProps, PostData } from '@/types/pages/posts/id'
 import styles from '@/styles/modules/pages/post.module.scss'
 
-export const getStaticProps = async props => {
+export const getStaticProps: FC<StaticProps> = async props => {
   const { params } = props
-  const postData = await getPostData(params.id)
+  const postData: PostData = await getPostData(params.id)
 
   return {
     props: { postData }
@@ -22,7 +24,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export default function Post(props) {
+export default function Post(props: PostProps) {
   const { postData } = props
 
   return (

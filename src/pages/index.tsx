@@ -3,11 +3,12 @@ import { Date } from '@/components/date'
 import { HeadPageTitle } from '@/components/head_page_title'
 import { Layout } from '@/components/layout'
 import { getSortedPostsData } from '@/lib/posts'
-import type { Post } from '@/types/Post'
+import type { Post } from '@/types/pages/index'
 import styles from '@/styles/modules/pages/home.module.scss'
 
 export const getStaticProps = async () => {
   const posts: Post[] = getSortedPostsData()
+
   return {
     props: { posts }
   }

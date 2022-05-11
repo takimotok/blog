@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import styles from '@/styles/modules/components/layouts/header.module.scss'
+import { FC } from 'react'
 import { SITE_TITLE } from '@/constants/Sites'
+import styles from '@/styles/modules/components/layouts/header.module.scss'
 
-export const Header = () => {
+export const Header: FC = () => {
   return (
       <header className={styles.header}>
         <div className={styles.header__siteTitle}>

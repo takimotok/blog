@@ -9,7 +9,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { POSTS_DIRECTORY } from '@/constants/Paths';
 import { unified } from 'unified';
-import type { Post } from '@/types/Post';
+import type { Post } from '@/types/pages/index';
 
 export const getSortedPostsData: Post[] = () => {
   // Get file names under /posts

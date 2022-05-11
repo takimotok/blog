@@ -13,9 +13,9 @@ import { unified } from 'unified';
 // `id` argument means file name
 // e.g.) file: about.md, id: about
 // note: Extensions must be .md
-export async function getPageData(id) {
-  const fullPath = path.join(PAGES_DIRECTORY, `${id}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+export async function getPageData(id: string) {
+  const fullPath: string = path.join(PAGES_DIRECTORY, `${id}.md`)
+  const fileContents: string = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)

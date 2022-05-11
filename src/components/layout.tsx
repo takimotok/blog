@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '@/styles/modules/components/layouts/layout.module.scss'
+import { FC } from 'react'
 import { Footer } from '@/components/layouts/footer'
 import { Header } from '@/components/layouts/header'
 import { SITE_TITLE } from '@/constants/Sites'
+import type { LayoutProps } from '@/types/components/layout'
+import styles from '@/styles/modules/components/layouts/layout.module.scss'
 
-export const Layout = props => {
+export const Layout: FC<LayoutProps> = props => {
   const { children, home } = props
 
   return (
