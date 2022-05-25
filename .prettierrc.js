@@ -1,4 +1,3 @@
-// cf.) https://prettier.io/docs/en/options.html
 module.exports = {
   arrowParens: 'always',
   bracketSameLine: false,
@@ -8,7 +7,7 @@ module.exports = {
   htmlWhitespaceSensitivity: 'css',
   insertPragma: false,
   jsxSingleQuote: false,
-  printWidth: 100,
+  printWidth: 119,
   proseWrap: 'preserve',
   quoteProps: 'as-needed',
   rangeEnd: Infinity,

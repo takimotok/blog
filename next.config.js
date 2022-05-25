@@ -5,4 +5,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src', 'styles')],
   },
+  eslint: {
+    dirs: ['src'],
+  },
 }
