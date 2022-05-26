@@ -16,6 +16,9 @@
     "preserveUnused": true
   },
   "lint-staged": {
+    "*": [
+      "git secrets --scan"
+    ],
     "*.{css,scss}": ["yarn fix:prettier", "yarn lint:stylelint"],
     "*.{js,jsx,ts,tsx}": ["yarn fix:eslint", "yarn lint:eslint"]
   },
