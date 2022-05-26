@@ -5,11 +5,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "run-p -c -l lint:**",
-    "lint:stylelint": "stylelint \"src/styles/**/*.{scss}\" --ignore-path .gitignore",
+    "lint:stylelint": "stylelint src/styles/**/*.scss --ignore-path .gitignore",
     "lint:eslint": "eslint --ext .js,.jsx,.ts,.tsx -c .eslintrc.json src",
     "fix": "run-s -l fix:**",
     "fix:prettier": "prettier --write src",
     "fix:eslint": "eslint --fix --ext .ts,.tsx src"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "yarn lint-staged",
+    "preserveUnused": true
+  },
+  "lint-staged": {
+    "*.{css,scss}": ["yarn fix:prettier", "yarn lint:stylelint"],
+    "*.{js,jsx,ts,tsx}": ["yarn fix:eslint", "yarn lint:eslint"]
   },
   "dependencies": {
     "date-fns": "^2.28.0",
@@ -37,9 +45,11 @@
     "eslint": "^8.16.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
+    "lint-staged": "^12.4.2",
     "npm-run-all": "^4.1.5",
     "postcss-scss": "^4.0.4",
     "prettier": "2.6.2",
+    "simple-git-hooks": "^2.7.0",
     "stylelint": "^14.8.2",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
