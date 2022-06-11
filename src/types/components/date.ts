@@ -1,3 +1,3 @@
 export type DateProps = {
-  dateString: string;
+  dateString: string
 }

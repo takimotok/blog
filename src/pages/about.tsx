@@ -1,35 +1,46 @@
+import { ParsedUrlQuery } from 'querystring'
+
+import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AUTHOR_NAME } from '@/constants/Authors'
+import { Twitter, GitHub } from 'react-feather'
+
+import type { Page } from '@/types/pages/index'
+
+import { getPageData } from '@/libs/page'
+
 import { Date } from '@/components/date'
 import { HeadPageTitle } from '@/components/head_page_title'
 import { Layout } from '@/components/layout'
-import { Twitter, GitHub } from 'react-feather';
-import { getPageData } from '@/lib/page'
-import type { AboutProps, PageDataProps } from '@/types/pages/about'
+
+import { AUTHOR_NAME } from '@/constants/Authors'
+
 import styles from '@/styles/modules/pages/about.module.scss'
 
-export const getStaticProps = async () => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>
+type ContextProps = Page & ParsedUrlQuery
+
+export const getStaticProps = async (context: GetStaticPropsContext<ContextProps>) => {
   // `id` stands for file name
   // e.g.) file: about.md, id: about
-  const pageData: PageDataProps = await getPageData('about')
+  const pageData: Page = await getPageData('about')
 
   return {
-    props: { pageData }
+    props: { pageData },
   }
 }
 
-export default function About(props: AboutProps) {
-  const { pageData } = props
+export const About: NextPage<Props> = (props) => {
+  const { title, created_at, contentHtml } = props['pageData']
 
   return (
     <Layout>
-      <HeadPageTitle title={pageData.title} />
+      <HeadPageTitle title={title} />
 
       <article className={`about`}>
-        <h1 className={styles.about__headingLg}>{pageData.title}</h1>
+        <h1 className={styles.about__headingLg}>{title}</h1>
         <div className={styles.about__date}>
-          <Date dateString={pageData.created_at} />
+          <Date dateString={created_at} />
         </div>
 
         <div className={styles.about__profile}>
@@ -48,16 +59,21 @@ export default function About(props: AboutProps) {
 
           <section className={styles.about__snsList}>
             <Link href="https://twitter.com/KengoTAKIMOTO">
-              <a><Twitter className={styles.about__snsList__icon} /></a>
+              <a>
+                <Twitter className={styles.about__snsList__icon} />
+              </a>
             </Link>
             <Link href="https://github.com/takimotok">
-              <a><GitHub className={styles.about__snsList__icon} /></a>
+              <a>
+                <GitHub className={styles.about__snsList__icon} />
+              </a>
             </Link>
           </section>
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>
     </Layout>
   )
 }
+export default About

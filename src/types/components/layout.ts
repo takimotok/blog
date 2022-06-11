@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
 export type LayoutProps = {
-  home?: boolean;
-  children: ReactNode;
+  home?: boolean
+  children: ReactNode
 }

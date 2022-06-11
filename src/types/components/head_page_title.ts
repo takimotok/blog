@@ -1,4 +1,3 @@
 export type HeadPageTitleProps = {
-  title?: string;
+  title?: string
 }
-

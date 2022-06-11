@@ -1,13 +1,16 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { FC } from 'react'
+
+import type { LayoutProps } from '@/types/components/layout'
+
 import { Footer } from '@/components/layouts/footer'
 import { Header } from '@/components/layouts/header'
+
 import { SITE_TITLE } from '@/constants/Sites'
-import type { LayoutProps } from '@/types/components/layout'
+
 import styles from '@/styles/modules/components/layouts/layout.module.scss'
 
-export const Layout: FC<LayoutProps> = props => {
+export const Layout: FC<LayoutProps> = (props) => {
   const { children, home } = props
 
   return (
@@ -15,10 +18,7 @@ export const Layout: FC<LayoutProps> = props => {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta
-          name="description"
-          content="T.Kengo's blog."
-        />
+        <meta name="description" content="T.Kengo's blog." />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -34,7 +34,7 @@ export const Layout: FC<LayoutProps> = props => {
 
         <main>{children}</main>
 
-        { !home && <Footer /> }
+        {!home && <Footer />}
       </div>
     </>
   )

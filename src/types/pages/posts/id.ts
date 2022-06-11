@@ -1,18 +1,5 @@
-export type StaticProps = {
-  params: {
-    id: string
-  };
-}
+import type { Post } from '@/types/pages/index'
 
-export type PostData = {
-  id: string;
-  contentHtml: string;
-  title: string;
-  tags: string[];
-  created_at: string;
-  updated_at?: string;
-}
-
-export type PostProps = {
-  postData: PostData;
+export type PostData = Post & {
+  contentHtml: string
 }

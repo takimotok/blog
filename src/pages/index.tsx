@@ -1,21 +1,33 @@
+import { ParsedUrlQuery } from 'querystring'
+
+import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Link from 'next/link'
+
+import type { Post } from '@/types/pages/index'
+
+import { getSortedPostsData } from '@/libs/posts'
+
 import { Date } from '@/components/date'
 import { HeadPageTitle } from '@/components/head_page_title'
 import { Layout } from '@/components/layout'
-import { getSortedPostsData } from '@/lib/posts'
-import type { Post } from '@/types/pages/index'
+
 import styles from '@/styles/modules/pages/home.module.scss'
 
-export const getStaticProps = async () => {
-  const posts: Post[] = getSortedPostsData()
+type Props = InferGetStaticPropsType<typeof getStaticProps>
+type ContextProps = Post & ParsedUrlQuery
+
+export const getStaticProps = async (context: GetStaticPropsContext<ContextProps>) => {
+  const posts: Post[] = await getSortedPostsData()
 
   return {
-    props: { posts }
+    props: {
+      posts,
+    },
   }
 }
 
-export default function Home(props: Post[]) {
-  const { posts } = props
+export const Home: NextPage<Props> = (props) => {
+  const { posts }: { posts: Post[] } = props
 
   return (
     <Layout home>
@@ -39,3 +51,4 @@ export default function Home(props: Post[]) {
     </Layout>
   )
 }
+export default Home

@@ -1,43 +1,67 @@
+import { ParsedUrlQuery } from 'querystring'
+
+import { GetStaticPropsContext, GetStaticPaths, InferGetStaticPropsType, NextPage } from 'next'
+
+import type { PostData } from '@/types/pages/posts/id'
+
+import { getAllPostIds, getPostData } from '@/libs/posts'
+
 import { Date } from '@/components/date'
-import { FC } from 'react'
 import { HeadPageTitle } from '@/components/head_page_title'
 import { Layout } from '@/components/layout'
-import { getAllPostIds, getPostData } from '@/lib/posts'
-import type { PostProps, StaticProps, PostData } from '@/types/pages/posts/id'
+
 import styles from '@/styles/modules/pages/post.module.scss'
 
-export const getStaticProps: FC<StaticProps> = async props => {
-  const { params } = props
+type Props = InferGetStaticPropsType<typeof getStaticProps>
+type ContextProps = PostData & ParsedUrlQuery
+
+export const getStaticProps = async (context: GetStaticPropsContext<ContextProps>) => {
+  const { params } = context
+
+  if (!params) {
+    return {
+      notFound: true,
+    }
+  }
   const postData: PostData = await getPostData(params.id)
 
   return {
-    props: { postData }
+    props: { postData },
   }
 }
 
-export const getStaticPaths = async () => {
-  const paths = getAllPostIds()
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = await getAllPostIds()
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
-export default function Post(props: PostProps) {
-  const { postData } = props
+export const Post: NextPage<Props> = (props) => {
+  const {
+    title,
+    created_at,
+    contentHtml,
+  }: {
+    title: 'string'
+    created_at: 'string'
+    contentHtml: 'string'
+  } = props['postData']
 
   return (
     <Layout>
-      <HeadPageTitle title={postData.title} />
+      <HeadPageTitle title={title} />
 
       <article className={`post`}>
-        <h1 className={styles.post__headingLg}>{postData.title}</h1>
+        <h1 className={styles.post__headingLg}>{title}</h1>
         <div className={styles.post__date}>
-          <Date dateString={postData.created_at} />
+          <Date dateString={created_at} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>
     </Layout>
   )
 }
+export default Post
