@@ -9,7 +9,7 @@
     "lint:stylelint": "stylelint src/styles/**/*.scss --ignore-path .gitignore",
     "lint:eslint": "eslint -c .eslintrc.json --ext .js,.jsx,.ts,.tsx src --ignore-pattern",
     "fix": "run-s -l fix:**",
-    "fix:prettier": "prettier --write",
+    "fix:prettier": "prettier --write src",
     "fix:eslint": "eslint --fix --ext .js,.jsx,.ts,.tsx src --ignore-pattern"
   },
   "config": {
