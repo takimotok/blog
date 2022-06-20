@@ -1,31 +1,40 @@
-// colors
-// ----------
+/**
+ * colors
+ */
 // fonts
-$colorText: #dcdcdc !default;
+$color-text: #dcdcdc !default;
 
 // backgrounds
-$colorBg: #222 !default;
-
-$colorInlineCodeBg: #111 !default;
+$color-bg: #222 !default;
+$color-inline-code-bg: #111 !default;
 
 // borders
-$colorBorder: $colorText !default;
+$color-border: $color-text !default;
 
 // links
-$colorLink: lighten(#4accff, 15%) !default;
-$colorLinkVisited: darken($colorLink, 15%) !default;
-$colorLinkHover: lighten($colorLink, 15%) !default;
-$colorLinkActive: yellow !default;
+$color-link-base: #4accff !default;
+$color-link: color.scale($color-link-base, $lightness: 15%) !default;
+$color-link-visited: color.scale($color-link, $lightness: -15%) !default;
+$color-link-hover: color.scale($color-link, $lightness: 15%) !default;
+$color-link-active: yellow !default;
 
 // date
-$colorDate: darken($colorText, 15%) !default;
+$color-date: color.scale($color-text, $lightness: 15%) !default;
 
+// table
+$color-table-bg: color.scale($color-bg, $lightness: 50%);
 
-// sizes
-// ----------
+// blockquote
+$color-blockquote-text: color.scale($color-text, $blackness: 10%);
+$color-blockquote-bg: color.scale($color-bg, $lightness: 50%);
+$color-blockquote-border: color.scale($color-border, $blackness: 10%);
+
+/**
+ * sizes
+ */
 // fonts
-$fontSizeBase: 18px !default;
-$fontSizes: (
+$font-size-base: 18px !default;
+$font-sizes: (
   '2xl': 2rem,
   'xl': 1.6rem,
   'lg': 1.2rem,
@@ -34,14 +43,15 @@ $fontSizes: (
   'xs': 0.6rem,
 ) !default;
 
-// spaces
-//
-// usage:
-//  e.g.) apply padding-left: 5rem;
-//  <h1 className={`styles.post__headingLg pl-5`}>{postData.title}</h1>
-// ----------
-$endValue: 5 !default;
-@for $i from 1 through $endValue {
+/**
+ * spaces
+ *
+ *  usage:
+ *    e.g.) apply padding-left: 5rem;
+ *    <h1 className={`styles.post__headingLg pl-5`}>{postData.title}</h1>
+ */
+$end-value: 5 !default;
+@for $i from 1 through $end-value {
   // margins
   .mt-#{$i} {
     margin-top: #{$i}rem;

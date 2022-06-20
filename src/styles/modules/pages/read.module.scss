@@ -2,13 +2,12 @@
 
 .read {
   &__headingLg {
-    font-size: map-get(variables.$fontSizes, 2xl);
+    font-size: map.get(variables.$font-sizes, 2xl);
   }
 
   &__date {
     display: block;
-    font-size: map-get(variables.$fontSizes, lg);
-    color: variables.$colorDate;
+    font-size: map.get(variables.$font-sizes, lg);
+    color: variables.$color-date;
   }
 }
-

@@ -1,50 +1,51 @@
-@charset "UTF-8";
-
-@use 'foundations/_variables';
-@use 'foundations/_mixins';
+@charset 'utf-8';
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;700&display=swap');
+
+@use 'foundations/_mixins';
+@use 'foundations/_variables';
+@use 'sass:map';
 
 html {
   box-sizing: border-box;
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 // https://github.com/necolas/normalize.css/issues/665
 body {
-  font-family: Noto Sans JP, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: variables.$font-size-base;
   line-height: 1.6;
-  font-size: variables.$fontSizeBase;
-  background-color: variables.$colorBg;
-  color: variables.$colorText;
+  color: variables.$color-text;
+  background-color: variables.$color-bg;
 }
 
 a {
-  color: variables.$colorLink;
+  color: variables.$color-link;
   text-decoration: none;
 
   &:visited {
-    color: variables.$colorLinkVisited;
+    color: variables.$color-link-visited;
   }
 
   &:hover {
-    color: variables.$colorLinkHover;
+    color: variables.$color-link-hover;
   }
 
   &:active {
-    color: variables.$colorLinkActive;
+    color: variables.$color-link-active;
   }
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 p {
@@ -58,34 +59,34 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   font-weight: bold;
   line-height: 1.5;
-  margin: 0;
   letter-spacing: -0.05rem;
 }
 
 h1 {
-  font-size: map-get(variables.$fontSizes, 2xl);
+  font-size: map.get(variables.$font-sizes, 2xl);
 }
 
 h2 {
-  font-size: map-get(variables.$fontSizes, xl);
+  font-size: map.get(variables.$font-sizes, xl);
 }
 
 h3 {
-  font-size: map-get(variables.$fontSizes, lg);
+  font-size: map.get(variables.$font-sizes, lg);
 }
 
 h4 {
-  font-size: map-get(variables.$fontSizes, md);
+  font-size: map.get(variables.$font-sizes, md);
 }
 
 h5 {
-  font-size: map-get(variables.$fontSizes, sm);
+  font-size: map.get(variables.$font-sizes, sm);
 }
 
 h6 {
-  font-size: map-get(variables.$fontSizes, xs);
+  font-size: map.get(variables.$font-sizes, xs);
 }
 
 /*
@@ -95,22 +96,23 @@ ul {
   padding-left: 1.5rem;
   list-style: disc;
 
-  & ul {
+  ul {
     list-style: circle;
 
-    & ul {
+    ul {
       list-style: square;
     }
   }
 }
 
+// create numbered order list
 ol {
-  counter-reset: section;
   list-style-type: none;
+  counter-reset: section;
 
   & > li::before {
-    counter-increment: section;
     content: counters(section, '.') '. ';
+    counter-increment: section;
   }
 
   ol {
@@ -128,18 +130,18 @@ ol {
  */
 table {
   display: block;
+  margin: 1rem 0;
   overflow-x: auto;
   overflow-x: scroll;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
-  margin: 1rem 0;
+  -webkit-overflow-scrolling: touch;
 
   thead {
     th {
       padding: 0.5rem;
-      border-bottom: 0.2rem variables.$colorText double;
-      background-color: rgba(lighten(variables.$colorBg, 50%), 0.1);
+      background-color: rgb(variables.$color-table-bg 0.1);
+      border-bottom: 0.2rem variables.$color-text double;
     }
   }
 
@@ -150,7 +152,7 @@ table {
       }
 
       &:nth-of-type(even) td {
-        background-color: rgba(lighten(variables.$colorBg, 50%), 0.1);
+        background-color: rgb(variables.$color-table-bg 0.1);
       }
     }
   }
@@ -160,7 +162,8 @@ table {
  * code
  */
 code {
-  font-family: 'Ricty Diminished';
+  font-family: 'Ricty Diminished', sans-serif;
+  font-size: map.get(variables.$font-sizes, md);
   src: url('/assets/fonts/RictyDiminished/RictyDiminished-Regular.ttf') format('truetype'),
     url('/assets/fonts/RictyDiminished/RictyDiminishedDiscord-Regular.ttf') format('truetype'),
     url('/assets/fonts/RictyDiminished/RictyDiminished-Bold.ttf') format('truetype'),
@@ -170,11 +173,9 @@ code {
     url('/assets/fonts/RictyDiminished/RictyDiminished-BoldOblique.ttf') format('truetype'),
     url('/assets/fonts/RictyDiminished/RictyDiminishedDiscord-BoldOblique.ttf') format('truetype');
 
-  font-size: map-get(variables.$fontSizes, md);
-
   &:not(.hljs) {
-    background-color: variables.$colorInlineCodeBg;
     padding: 0 0.5rem;
+    background-color: variables.$color-inline-code-bg;
   }
 }
 
@@ -182,10 +183,10 @@ code {
  * blockquote
  */
 blockquote {
-  border-left: thin darken(variables.$colorBorder, 10%) solid;
   padding: 1rem;
-  background-color: rgba(lighten(variables.$colorBg, 50%), 0.1);
-  color: darken(variables.$colorText, 10%);
   font-size: 90%;
   font-style: italic;
+  color: variables.$color-blockquote-text;
+  background-color: rgb($color-blockquote-bg 0.1);
+  border-left: thin $color-blockquote-border solid;
 }

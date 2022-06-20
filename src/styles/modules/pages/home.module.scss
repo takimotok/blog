@@ -2,25 +2,24 @@
 
 .home {
   &__headingLg {
-    font-size: map-get(variables.$fontSizes, 2xl);
     padding: 1rem 0;
+    font-size: map.get(variables.$font-sizes, 2xl);
   }
 
   &__list {
-    list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    list-style: none;
 
     &__item {
-      font-size: map-get(variables.$fontSizes, lg);
       padding-bottom: 1rem;
+      font-size: map.get(variables.$font-sizes, lg);
 
       &__date {
         display: block;
-        font-size: map-get(variables.$fontSizes, md);
-        color: variables.$colorDate;
+        font-size: map.get(variables.$font-sizes, md);
+        color: variables.$color-date;
       }
     }
   }
 }
-
