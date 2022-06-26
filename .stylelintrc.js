@@ -1,10 +1,5 @@
 module.exports = {
-  extends: [
-    'stylelint-config-standard',
-    'stylelint-config-recess-order',
-    'stylelint-prettier/recommended',
-    'stylelint-config-prettier',
-  ],
+  extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order', 'stylelint-config-prettier'],
   plugins: ['stylelint-scss'],
   ignoreFiles: ['**/node_modules/**', '**/.next/**'],
   overrides: [
@@ -18,5 +13,14 @@ module.exports = {
     // cf.) https://github.com/stylelint-scss/stylelint-scss
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
+    // 'scss/dollar-variable-pattern': null,
+    // 'scss/dollar-variable-empty-line-before': "never",
+    'no-descending-specificity': null,
+    'unit-no-unknown': [
+      true,
+      {
+        ignoreFunctions: ['/^map\\..+/'],
+      },
+    ],
   },
 }

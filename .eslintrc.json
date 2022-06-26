@@ -3,7 +3,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/warnings",
     "plugin:import/typescript",
     "next",
@@ -12,6 +11,9 @@
   ],
   "plugins": ["unused-imports"],
   "settings": {
+    "next": {
+      "rootDir": "./"
+    },
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true
