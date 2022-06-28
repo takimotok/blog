@@ -9,4 +9,7 @@ module.exports = {
   eslint: {
     dirs: ['src'],
   },
+  experimental: {
+    esmExternals: true
+  }
 }
