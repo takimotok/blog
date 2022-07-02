@@ -59,6 +59,8 @@ h3,
 h4,
 h5,
 h6 {
+  padding-top: map.get(variables.$paddings, xs);
+  padding-bottom: map.get(variables.$paddings, xs);
   margin: 0;
   font-weight: bold;
   line-height: 1.5;
