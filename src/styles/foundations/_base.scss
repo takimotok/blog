@@ -1,0 +1,194 @@
+@use 'foundations/_mixins';
+@use 'foundations/_variables';
+@use 'sass:map';
+
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// https://github.com/necolas/normalize.css/issues/665
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: variables.$font-size-base;
+  line-height: 1.6;
+  color: variables.$color-text;
+  background-color: variables.$color-bg;
+}
+
+a {
+  color: variables.$color-link;
+  text-decoration: none;
+
+  &:visited {
+    color: variables.$color-link-visited;
+  }
+
+  &:hover {
+    color: variables.$color-link-hover;
+  }
+
+  &:active {
+    color: variables.$color-link-active;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+// headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: map.get(variables.$paddings, xs);
+  padding-bottom: map.get(variables.$paddings, xs);
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+}
+
+h1 {
+  font-size: map.get(variables.$font-sizes, 2xl);
+}
+
+h2 {
+  font-size: map.get(variables.$font-sizes, xl);
+}
+
+h3 {
+  font-size: map.get(variables.$font-sizes, lg);
+}
+
+h4 {
+  font-size: map.get(variables.$font-sizes, md);
+}
+
+h5 {
+  font-size: map.get(variables.$font-sizes, sm);
+}
+
+h6 {
+  font-size: map.get(variables.$font-sizes, xs);
+}
+
+/*
+ * list
+ */
+ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+
+  ul {
+    list-style: circle;
+
+    ul {
+      list-style: square;
+    }
+  }
+}
+
+// create numbered order list
+ol {
+  list-style-type: none;
+  counter-reset: section;
+
+  & > li::before {
+    content: counters(section, '.') '. ';
+    counter-increment: section;
+  }
+
+  ol {
+    padding-left: 1rem;
+  }
+
+  ul {
+    padding-left: 2.5rem;
+    list-style: circle;
+  }
+}
+
+/*
+ * table
+ */
+table {
+  display: block;
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
+
+  thead {
+    th {
+      padding: 0.5rem;
+      background-color: rgb(variables.$color-table-bg, 0.1);
+      border-bottom: 0.2rem variables.$color-text double;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 0.5rem;
+      }
+
+      &:nth-of-type(even) td {
+        background-color: rgb(variables.$color-table-bg, 0.1);
+      }
+    }
+  }
+}
+
+/*
+ * code
+ */
+code {
+  font-family: 'Ricty Diminished', sans-serif;
+  font-size: map.get(variables.$font-sizes, md);
+  src: url('/assets/fonts/RictyDiminished/RictyDiminished-Regular.ttf') format('truetype'),
+    url('/assets/fonts/RictyDiminished/RictyDiminishedDiscord-Regular.ttf') format('truetype'),
+    url('/assets/fonts/RictyDiminished/RictyDiminished-Bold.ttf') format('truetype'),
+    url('/assets/fonts/RictyDiminished/RictyDiminishedDiscord-Bold.ttf') format('truetype'),
+    url('/assets/fonts/RictyDiminished/RictyDiminished-Oblique.ttf') format('truetype'),
+    url('/assets/fonts/RictyDiminished/RictyDiminishedDiscord-Oblique.ttf') format('truetype'),
+    url('/assets/fonts/RictyDiminished/RictyDiminished-BoldOblique.ttf') format('truetype'),
+    url('/assets/fonts/RictyDiminished/RictyDiminishedDiscord-BoldOblique.ttf') format('truetype');
+
+  &:not(.hljs) {
+    padding: 0 0.5rem;
+    background-color: variables.$color-inline-code-bg;
+  }
+}
+
+/*
+ * blockquote
+ */
+blockquote {
+  padding: 1rem;
+  font-size: 90%;
+  font-style: italic;
+  color: variables.$color-blockquote-text;
+  background-color: rgb(variables.$color-blockquote-bg, 0.1);
+  border-left: thin variables.$color-blockquote-border solid;
+}

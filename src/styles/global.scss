@@ -1,0 +1,14 @@
+/*
+ * global.scss
+ */
+
+// export to page/_app.js
+// e.g.)
+//    import '@/styles/global.scss'
+
+@use 'foundations/_variables';
+@use 'foundations/_mixins';
+@use 'foundations/_reset';
+@use 'foundations/_base';
+
+@use 'highlight.js/scss/github-dark.scss';

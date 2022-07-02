@@ -1,0 +1,26 @@
+@use 'foundations/_variables';
+@use 'sass:map';
+
+.home {
+  &__headingLg {
+    padding: 1rem 0;
+    font-size: map.get(variables.$font-sizes, 2xl);
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+      padding-bottom: 1rem;
+      font-size: map.get(variables.$font-sizes, lg);
+
+      &__date {
+        display: block;
+        font-size: map.get(variables.$font-sizes, md);
+        color: variables.$color-date;
+      }
+    }
+  }
+}

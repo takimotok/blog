@@ -1,0 +1,54 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "next",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "plugins": ["unused-imports"],
+  "settings": {
+    "next": {
+      "rootDir": "./"
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": [".next/**/*", ".git/**/*", "node_modules/**/*", "public/**/*", "src/styles/**/*", ".*"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "warn",
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0,
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "object", "type", "index"],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          { "pattern": "@/types/**", "group": "internal", "position": "before" },
+          { "pattern": "@/libs/**", "group": "internal", "position": "before" },
+          { "pattern": "@/components/**", "group": "internal", "position": "before" },
+          { "pattern": "@/constants/**", "group": "internal", "position": "before" },
+          { "pattern": "@/styles/**", "group": "index", "position": "before" }
+        ]
+      }
+    ],
+    "react/no-unescaped-entities": 0
+  }
+}

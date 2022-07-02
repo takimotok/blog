@@ -1,0 +1,14 @@
+@use 'foundations/_variables';
+@use 'sass:map';
+
+.post {
+  &__headingLg {
+    font-size: map.get(variables.$font-sizes, 2xl);
+  }
+
+  &__date {
+    display: block;
+    font-size: map.get(variables.$font-sizes, lg);
+    color: variables.$color-date;
+  }
+}

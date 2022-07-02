@@ -1,0 +1,45 @@
+@use 'foundations/_variables';
+@use 'sass:map';
+
+.about {
+  &__headingLg {
+    font-size: map.get(variables.$font-sizes, 2xl);
+  }
+
+  &__date {
+    display: block;
+    font-size: map.get(variables.$font-sizes, lg);
+    color: variables.$color-date;
+  }
+
+  &__profile {
+    padding: 1rem;
+    text-align: center;
+
+    &__image {
+      border-radius: 9999px;
+    }
+  }
+
+  &__name {
+    font-size: map.get(variables.$font-sizes, lg);
+  }
+
+  &__snsList {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    list-style: none;
+
+    &__icon {
+      // using react-feather
+      stroke: 'currentColor';
+      stroke-linecap: 'round';
+      stroke-linejoin: 'round';
+      stroke-width: 1;
+    }
+  }
+}
