@@ -1,10 +1,10 @@
-@charset 'utf-8';
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;700&display=swap');
-
 @use 'foundations/_mixins';
 @use 'foundations/_variables';
 @use 'sass:map';
+
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -140,7 +140,7 @@ table {
   thead {
     th {
       padding: 0.5rem;
-      background-color: rgb(variables.$color-table-bg 0.1);
+      background-color: rgb(variables.$color-table-bg, 0.1);
       border-bottom: 0.2rem variables.$color-text double;
     }
   }
@@ -152,7 +152,7 @@ table {
       }
 
       &:nth-of-type(even) td {
-        background-color: rgb(variables.$color-table-bg 0.1);
+        background-color: rgb(variables.$color-table-bg, 0.1);
       }
     }
   }
@@ -187,6 +187,6 @@ blockquote {
   font-size: 90%;
   font-style: italic;
   color: variables.$color-blockquote-text;
-  background-color: rgb($color-blockquote-bg 0.1);
-  border-left: thin $color-blockquote-border solid;
+  background-color: rgb(variables.$color-blockquote-bg, 0.1);
+  border-left: thin variables.$color-blockquote-border solid;
 }
