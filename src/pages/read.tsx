@@ -26,7 +26,7 @@ export const getStaticProps = async (context: GetStaticPropsContext<ContextProps
 }
 
 export const Read: NextPage<Props> = (props) => {
-  const { title, created_at, contentHtml } = props['pageData']
+  const { title, created_at, updated_at, contentHtml } = props['pageData']
 
   return (
     <Layout>
@@ -35,7 +35,7 @@ export const Read: NextPage<Props> = (props) => {
       <article className={`read`}>
         <h1 className={styles.read__headingLg}>{title}</h1>
         <div className={styles.read__date}>
-          <Date dateString={created_at} />
+          <Date dateString={updated_at ?? created_at} />
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
