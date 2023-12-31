@@ -49,10 +49,10 @@ updated_at: ''
 
 ## スキル
 
-- HTML5/CSS3
 - JavaScript
     - jQuery
     - Vue.js
+    - React
 - PHP 5.6/7.x
     - Laravel, PHPUnit, API 設計/開発
     - 開発環境は Laravel + Vue.js + SCSS が多い
@@ -63,9 +63,9 @@ updated_at: ''
     - vim + tmux 環境
     - 最近だと statusline をオシャレにする作業がチャレンジングだった
     - [vim の statusline をオシャレにしたい. lightline.vim の行,列文字色を変更したい](https://kengotakimoto.com/vim-statusline/)
-- R
-    - 最近触ってない
 - Python
+    - AWS Athena 分析用に ETL 処理実装
+- R
     - 最近触ってない
 
 ## 業界での立ち位置
