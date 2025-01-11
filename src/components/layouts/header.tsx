@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import { FC } from 'react'
 
 import { SITE_TITLE } from '@/constants/Sites'
+
+import type { FC } from 'react'
+
 
 import styles from '@/styles/modules/components/layouts/header.module.scss'
 
@@ -18,6 +20,11 @@ export const Header: FC = () => {
           <li className={styles.header__navList__item}>
             <Link href={`/about`}>
               <a>About</a>
+            </Link>
+          </li>
+          <li className={styles.header__navList__item}>
+            <Link href="https://takimotok.github.io/resume/" rel="noopener noreferrer" target="_blank">
+              <a>Resume</a>
             </Link>
           </li>
           <li className={styles.header__navList__item}>
