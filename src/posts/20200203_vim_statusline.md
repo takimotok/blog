@@ -79,7 +79,6 @@ github の readme に対策が書いてあった.
 >
 > -- `:help laststatus`
 
-
 ## Colorscheme configuration
 
 readme に倣えば color scheme が変更可能.  
@@ -187,7 +186,6 @@ separator, subseparator 各 default 値は help に書いてある
 >
 > -- `:h g:lightline.separator*`
 
-
 やってみる.  
 .vimrc をこうする.
 
@@ -220,12 +218,12 @@ let g:lightline = {
 必要なツールはこれ.
 
 - [fontforge](https://fontforge.org/en-US/)
-    
-    - フォント作成のためのオープンソースソフト
+
+  - フォント作成のためのオープンソースソフト
 - [nerd fonts](https://github.com/ryanoasis/nerd-fonts)
-    
-    - イケてるアイコンフォント
-    - font patcher 同梱
+
+  - イケてるアイコンフォント
+  - font patcher 同梱
 
 パッチを当ててみる.
 
@@ -286,18 +284,17 @@ font を合成する前に nerd-fonts 同梱の font-patcher の使い方を眺�
 必要そうなオプションはこのへん.
 
 > - \-l, --adjust-line-height
->     - Whether to adjust line heights (attempt to center powerline separators more evenly)
+>   - Whether to adjust line heights (attempt to center powerline separators more evenly)
 > - \-q, --quiet, --shutup
->     - Do not generate verbose output
+>   - Do not generate verbose output
 > - \-w, --windows
->     - Limit the internal font name to 31 characters (for Windows compatibility)
+>   - Limit the internal font name to 31 characters (for Windows compatibility)
 > - \-c, --complete
->     - Add all available Glyphs
+>   - Add all available Glyphs
 > - \-out \[OUTPUTDIR\], --outputdir \[OUTPUTDIR\]
->     - The directory to output the patched font file to
+>   - The directory to output the patched font file to
 >
 > -- [Option 8: Patch Your Own Font](https://github.com/ryanoasis/nerd-fonts#option-8-patch-your-own-font)
-
 
 windows 用オプションは不要かも.  
 私のサブ機が win. だから一応作っとく.

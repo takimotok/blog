@@ -58,7 +58,7 @@ vim でヘルプを確認してみる.
 - `[]` 省略可
 - `[default]` 詳しくは `:highlight-default` を参照
 - `{group-name}` highlightするグループ
-    - 新規追加 or 既存のものを選択
+  - 新規追加 or 既存のものを選択
 - `{key}={arg}` キー, 値のペアで色の決定をする (はず)
 
 後半3つについてさらに調べる.
@@ -176,9 +176,9 @@ terminal の種類と設定によって指定可能なカラー番号が変わ�
 設定可能なカラー番号の確認方法は次の通り.
 
 - 設定可能なカラー番号 確認
-    - `:runtime syntax/colortest.vim`
+  - `:runtime syntax/colortest.vim`
 - 現状の設定 確認
-    - `:so $VIMRUNTIME/syntax/hitest.vim`
+  - `:so $VIMRUNTIME/syntax/hitest.vim`
 
 ここにはカラー番号って書いてあるけど, 他にも `white` とか `black` とかでも指定可能.
 
@@ -187,9 +187,9 @@ terminal の種類と設定によって指定可能なカラー番号が変わ�
 文字色, 背景色は次の key に 数字を指定する.
 
 - fg は foreground.
-    - 文字色
+  - 文字色
 - bg は background.
-    - 背景色
+  - 背景色
 
 ここまで調べればあとは指定するだけ.
 

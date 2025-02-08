@@ -89,7 +89,7 @@ hogeee
 次の点を前提とする.
 
 - docker コマンドでゴリゴリ操作
-    - Dockerfile, docker-compose.yml は使わない
+  - Dockerfile, docker-compose.yml は使わない
 - ubuntu:18.04 イメージを使用
 
 次の点は知っていると便利かも.
@@ -102,7 +102,7 @@ hogeee
 
 - data volume が host machine から見えない事を確認
 - 明示的に mount point を指定した data volume container 作成
-    - ここで複数 container からデータの参照ができることを確認
+  - ここで複数 container からデータの参照ができることを確認
 - bind について公式 doc. を参考に学ぶ
 
 ## 背景
@@ -138,13 +138,13 @@ docker for mac は host machine 上に VM を起動し, その上で container �
 
 - ubuntu image 取得
 - data volume container 作成
-    - 明示的に data volume を作成
-    - この data volume は VM 上に作成される
+  - 明示的に data volume を作成
+  - この data volume は VM 上に作成される
 - アプリケーション container を2つ (a, b) 作成
 - a, b 各 container から data volume container 配下のデータが参照可能であることを確認
-    - container\_a が data volume container 配下に作成したデータを container\_b から参照
+  - container\_a が data volume container 配下に作成したデータを container\_b から参照
 - data volume の実体はどこだろ, って探す
-    - ここで 「そんなものはナイ」 って気付く
+  - ここで 「そんなものはナイ」 って気付く
 
 いざ, 実践.
 
@@ -436,6 +436,6 @@ docker for mac が VM 上に container を立てるっていうのが盲点だ�
 - data volume container
 - mount
 - mount point
-    - 公式 doc. では `endpoint` って表現されてる
+  - 公式 doc. では `endpoint` って表現されてる
 
 今回は以上.

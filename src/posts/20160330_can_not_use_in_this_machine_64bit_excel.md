@@ -35,7 +35,7 @@ updated_at: ''
 > -- [「はこのマシンでは利用できないため、オブジェクト を読み込めませんでした。」～64bit版Excelで不可解なエラーに遭遇した | ぼちぼち書くブログ](http://mypace.sasapurin.com/entry/2015/05/26/124400)
 
 とはいえ、そもそもexcel 32bit/64bit の違いはなんなのか知りたい.  
-ここでは office 32bit/64bit 版の違いを紹介する.    
+ここでは office 32bit/64bit 版の違いを紹介する.
 
 ### Office 32bit/64bit の違い
 
@@ -99,7 +99,7 @@ VBAを走らせてどうこうする人にとっては上述の点が気にな�
 1. MS アカウントにサインイン
 2. サービスとサブスクリプション
 3. Office 365設定
-4.  Office Home and Buisiness Premium
+4. Office Home and Buisiness Premium
     - これは人によって異なるかも
 5. 追加のインストールオプション
     - Office -32ビット(推奨) をインストール
@@ -108,7 +108,7 @@ VBAを走らせてどうこうする人にとっては上述の点が気にな�
 
 ![Office Home and Buisiness Premium](/images/pages/posts/20160330/160330_OfficePremium.png)
 
-![Office 32bit インストール](/images/pages/posts/20160330/9008a579fe98b2e2cce91e6cde3a0809.png)    
+![Office 32bit インストール](/images/pages/posts/20160330/9008a579fe98b2e2cce91e6cde3a0809.png)
 
 ## まとめ
 
@@ -117,7 +117,6 @@ VBAを走らせてどうこうする人にとっては上述の点が気にな�
 はじめて64bit OSのPCを買って調子に乗っていた.  
 まさかOfficeまで 32bit/64bit の区別があるなんて思いもしなかった...  
 環境構築って大切.  
-良い勉強になった.    
+良い勉強になった.
 
 今回は以上.
-

@@ -18,8 +18,8 @@ geometry型についてよくわからなかったので, 公式マニュファ�
 - MySQL リファレンスマニュアルを自分なりに読み解く & まとめる
 - 不明点は都度ググる & まとめる
 - 次の視点でまとめる
-    - 緯度経度の場合はどうなの？
-    - InnoDBの場合はどうなの？
+  - 緯度経度の場合はどうなの？
+  - InnoDBの場合はどうなの？
 
 v 5.7から InnoDBでも空間データ型が扱えるようになった.  
 この点は後述する.
@@ -38,7 +38,7 @@ v 5.7から InnoDBでも空間データ型が扱えるようになった.
 ## 動作環境
 
 - MySQL 5.7.22
-    - InnoDB
+  - InnoDB
 
 ## そもそもMySQLにはどんなデータ型があるの?
 
@@ -92,7 +92,7 @@ MySQLにおける空間データの取扱は, OGCの仕様に沿っているっ�
 
 - OGCが発行している仕様書
 - 入手場所
-    - [OpenGIS Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option](http://www.opengeospatial.org/standards/sfs)
+  - [OpenGIS Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option](http://www.opengeospatial.org/standards/sfs)
 
 ### InnoDBでも空間インデックスが貼れる
 
@@ -153,19 +153,19 @@ MySQLの空間データ型の取扱は OpenGIS幾何モデル に基づいてい
 > The geometry classes define a hierarchy as follows:
 >
 > - Geometry (noninstantiable)
->     - Point (instantiable)
->     - Curve (noninstantiable)
->         - LineString (instantiable)
->             - Line
->             - LinearRing
->     - Surface (noninstantiable)
->         - Polygon (instantiable)
->     - GeometryCollection (instantiable)
->         - MultiPoint (instantiable)
->         - MultiCurve (noninstantiable)
->             - MultiLineString (instantiable)
->         - MultiSurface (noninstantiable)
->             - MultiPolygon (instantiable)
+>   - Point (instantiable)
+>   - Curve (noninstantiable)
+>     - LineString (instantiable)
+>       - Line
+>       - LinearRing
+>   - Surface (noninstantiable)
+>     - Polygon (instantiable)
+>   - GeometryCollection (instantiable)
+>     - MultiPoint (instantiable)
+>     - MultiCurve (noninstantiable)
+>       - MultiLineString (instantiable)
+>     - MultiSurface (noninstantiable)
+>       - MultiPolygon (instantiable)
 >
 > -- [11.5 Spatial Data Types](https://dev.mysql.com/doc/refman/5.7/en/spatial-types.html)
 
@@ -173,7 +173,7 @@ OOPのクラス設計をイメージすると理解しやすいかも.
 
 - instantiable のみインスタンス化可能
 - Geometyは親クラス (abstract)
-    - ↑ここにいくつかのサブクラスがぶら下がっている
+  - ↑ここにいくつかのサブクラスがぶら下がっている
 
 概念, 用語については以上.  
 ここからは次のクラスについて見てゆく.
@@ -188,37 +188,37 @@ abstractクラス.
 プロパティーは次の通り.
 
 - type
-    - 階層内のインスタンス化可能クラスの内どれか
+  - 階層内のインスタンス化可能クラスの内どれか
 - SRID
-    - 空間参照識別子
-    - 幾何値に関連付けられた整数
+  - 空間参照識別子
+  - 幾何値に関連付けられた整数
 - coordinates
-    - 座標
-    - SRIDに対する相対的なもの
+  - 座標
+  - SRIDに対する相対的なもの
 - interior, boundary, exterior
-    - 占有領域を表す
-        - interior: 幾何図形によって占有されている領域
-        - boundary: 幾何図形の内部と外部の境界
-        - exterior: 幾何図系によって占有されていない領域
+  - 占有領域を表す
+    - interior: 幾何図形によって占有されている領域
+    - boundary: 幾何図形の内部と外部の境界
+    - exterior: 幾何図系によって占有されていない領域
 - MBR (minimum bounding rectangle)
-    - 包絡線, envelope
-    - 範囲を規定する幾何図形
-    - 最小 および 最大 の (x,y)座標から形成される
+  - 包絡線, envelope
+  - 範囲を規定する幾何図形
+  - 最小 および 最大 の (x,y)座標から形成される
 - simple / nonsimple
-    - 値が simple or nonsimple かを表す
+  - 値が simple or nonsimple かを表す
 - closed / not closed
-    - 値が closed or not closed かを表す
+  - 値が closed or not closed かを表す
 - empty / nonempty
-    - 値が empty or nonempty かを表す
-        - empty
-            - 点を1つも含まない幾何図形のこと
-            - 面積が0
+  - 値が empty or nonempty かを表す
+    - empty
+      - 点を1つも含まない幾何図形のこと
+      - 面積が0
 - dimension
-    - 次元
-        - \-1 : 空の幾何図形
-        - 0 : 長さ も 面積 も持たない幾何図形
-        - 1 : 長さ≠0, 面積=0 の幾何図形
-        - 2 : 面積≠0 の幾何図形
+  - 次元
+    - \-1 : 空の幾何図形
+    - 0 : 長さ も 面積 も持たない幾何図形
+    - 1 : 長さ≠0, 面積=0 の幾何図形
+    - 2 : 面積≠0 の幾何図形
 
 まとめたはいいけど, 正直よく分からないプロパティもある.
 

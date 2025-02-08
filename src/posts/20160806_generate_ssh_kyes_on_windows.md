@@ -47,7 +47,7 @@ cf.) [Looking Forward: Microsoft Support for Secure Shell (SSH) | Windows PowerS
 1. Win + C で画面右側にメニューを表示
 2. `検索` を選択
 3. `Git GUI` と入力
-4. `Git GUI` を選択   
+4. `Git GUI` を選択
 
 ### 2\. Help -> Show SSH Key
 
@@ -60,7 +60,7 @@ cf.) [Looking Forward: Microsoft Support for Secure Shell (SSH) | Windows PowerS
 
 ![windows git ssh generate key](/images/pages/posts/20160806/gitSsh_3.png)
 
-- `Generate Key` をクリック   
+- `Generate Key` をクリック
 
 ### 4\. パスフレーズ 入力/未入力 を選択
 

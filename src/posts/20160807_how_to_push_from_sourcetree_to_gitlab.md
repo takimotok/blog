@@ -28,13 +28,13 @@ GitHub や GitLab へ push するまでに超えなければならないステ�
 
 まず GitLab でプロジェクト作成する.
 
-### 1\. GitLabへアクセスし、sign in.
+### 1\. GitLabへアクセスし、sign in
 
-![GitLab sign in](/images/pages/posts/20160807/gitLab_1.png)   
+![GitLab sign in](/images/pages/posts/20160807/gitLab_1.png)
 
 ### 2\. New Project をクリック
 
-![GitLab Create New Project](/images/pages/posts/20160807/pic_2.png) 画面右上 New Project をクリック   
+![GitLab Create New Project](/images/pages/posts/20160807/pic_2.png) 画面右上 New Project をクリック
 
 ### 3\. Project name / Project description / Create project
 
@@ -81,7 +81,7 @@ GitLab での作業は一旦ここまで.
 ここで選択するのは `ssh 公開鍵` ではないので注意.  
 公開鍵の拡張子は `.pub`.
 
-ファイル選択後, コマンドプロンプトが起動する.   
+ファイル選択後, コマンドプロンプトが起動する.
 
 ### 6\. コマンドプロンプトにパスフレーズ入力
 
@@ -135,7 +135,8 @@ SourcTreeに戻ると上図のような表示になっています.
 
 1. 作業ツリーのファイル をチェック
 2. Indexにステージしたファイル にファイルが移動したことを確認
-  - ![SourceTree set staging](/images/pages/posts/20160807/pic_9_2.png)
+
+- ![SourceTree set staging](/images/pages/posts/20160807/pic_9_2.png)
 
 ウィンドウ右下には編集したファイルの内容が表示されます.
 
@@ -167,11 +168,11 @@ GitLab へ commit & push する.
 コミット時にコメントを入力することができる.  
 今回は `first commit` と入力.
 
-### 5\. GitLab でちゃんとコミットされていることを確認。完了。
+### 5\. GitLab でちゃんとコミットされていることを確認。完了
 
 ![GitLab check be pushed](/images/pages/posts/20160807/pic_12.png)
 
-GitLab へちゃんと push されていることを確認する.   
+GitLab へちゃんと push されていることを確認する.
 
 ### 6\. GitLab で Project/Commit をクリック
 
@@ -189,7 +190,7 @@ Commit(1) をクリックすると次の画面へ遷移する.
 コミット時に入力したコメントが表示されているのが分かる.  
 さらに、コレをクリックするとpushしたファイルの中身を見ることが出来る.
 
-作業は以上です。   
+作業は以上です。
 
 ## まとめ
 

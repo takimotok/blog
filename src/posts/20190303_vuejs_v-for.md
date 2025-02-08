@@ -142,11 +142,11 @@ var vm = new Vue({
 index, key, value はそれぞれ次の通り.
 
 - index
-    - Object 内の何番目の要素か
+  - Object 内の何番目の要素か
 - key
-    - Object 内で `key: value` で指定した `key` のこと
+  - Object 内で `key: value` で指定した `key` のこと
 - value
-    - Object 内で `key:value` で指定した `value` のこと
+  - Object 内で `key:value` で指定した `value` のこと
 
 実践的には, このオブジェクトが xxx という key を持っていない場合は xxx する, みたいな使い方ができそう.
 

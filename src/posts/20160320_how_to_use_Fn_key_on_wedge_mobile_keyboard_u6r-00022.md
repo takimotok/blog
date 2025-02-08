@@ -8,7 +8,7 @@ updated_at: ''
 先日購入したキーボードをもっと使いやすくしたい.
 
 - Bluetooth Wedge Mobile Keyboard U6R-00022
-    - Fn キーを動作させるために `左下Fnキー` + `F1 - F12` の同時押しが必要
+  - Fn キーを動作させるために `左下Fnキー` + `F1 - F12` の同時押しが必要
 
 解決策を探したところ, 組み込みスクリプトを公開してくれた方を発見したので紹介する.
 
@@ -39,13 +39,13 @@ updated_at: ''
 下記 2ZZ氏 のスクリプトを利用する.  
 `exe` もあるようです.
 
-[Microsoft Wedge Mobile Keyboard のＦキーをFnキー無しで動作させる | 新たなるエクスペリエンス](http://zze128.blog9.fc2.com/blog-entry-403.html)    
+[Microsoft Wedge Mobile Keyboard のＦキーをFnキー無しで動作させる | 新たなるエクスペリエンス](http://zze128.blog9.fc2.com/blog-entry-403.html)
 
 ## 動作環境
 
 私の動作環境は次の通り.
 
-- TOSHIBA kira v63 windows8.1 64bit    
+- TOSHIBA kira v63 windows8.1 64bit
 
 ## AutoHotKey インストール
 
@@ -119,7 +119,7 @@ AutoHotKey について ↓
 元の `F9` の記述は 削除 or コメントアウト する.
 
 ```
-#If varMode = 0		;通常版・カスタム版の制御
+#If varMode = 0  ;通常版・カスタム版の制御
 PrintScreen::F9
 Home::F10
 End::F11
@@ -180,4 +180,3 @@ AutoHotKeyでググるとはてなの方々が沢山ヒットします. 実力�
 でもまずは目の前の開発に専念しないと. 2016年中には WEB サービスをリリースしたいので.
 
 今回は以上.
-

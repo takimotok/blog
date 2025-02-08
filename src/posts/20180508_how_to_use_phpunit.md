@@ -17,9 +17,9 @@ PHPUnitを使うと, 自分が作ったメソッドが期待通りの値を返�
 基本的には次の2ディレクトリにphpファイルを作りながら動作を確認してゆく.
 
 - app
-    - メイン処理を行うファイルを格納するディレクトリ
+  - メイン処理を行うファイルを格納するディレクトリ
 - tests
-    - テスト用ファイルを格納するディレクトリ
+  - テスト用ファイルを格納するディレクトリ
 
 ## テスト用ファイル 書き方
 
@@ -34,10 +34,10 @@ PHPUnitを使うと, 自分が作ったメソッドが期待通りの値を返�
 ここでは次のファイルを例に考える.
 
 - app
-    - message.php
-        - `getMessage()` をメソッドとして持つ
+  - message.php
+    - `getMessage()` をメソッドとして持つ
 - tests
-    - messageTest.php
+  - messageTest.php
 
 PHPUnitの書き方のルールは次の通り.
 
@@ -59,9 +59,9 @@ PHPUnitの書き方のルールは次の通り.
 作成するファイルは次の通り.
 
 - app
-    - message.php
+  - message.php
 - tests
-    - messageTest.php
+  - messageTest.php
 
 ```php
 # app/message.php
@@ -195,9 +195,9 @@ Tests: 1, Assertions: 1, Failures: 1.
 作成するファイルは次の通り.
 
 - app
-    - arithmetic.php
+  - arithmetic.php
 - tests
-    - arithmeticTest.php
+  - arithmeticTest.php
 
 ```php
 // app/arithmetic.php
@@ -310,16 +310,16 @@ Failしてる.
 ↑このメッセージからFail箇所を特定する.
 
 - `.F.. 4 / 4 (100%)`
-    - 全部で4つのメソッドが実行された
-    - そのうち2番目のメソッドでfailした
+  - 全部で4つのメソッドが実行された
+  - そのうち2番目のメソッドでfailした
 - `Tests: 4, Assertions: 11, Failures: 1.`
-    - 全 4 メソッド がテストされた
-    - assertion は 11個 実行された
-    - 1つが fail した
+  - 全 4 メソッド がテストされた
+  - assertion は 11個 実行された
+  - 1つが fail した
 - `/vagrant/tests/arithmeticTest.php:31`
-    - 31行目が怪しいよ
-    - `Failed asserting that 1 matches expected -1.`
-        - 期待値 `-1` に対して 実際は 1 が返ってきてるよ
+  - 31行目が怪しいよ
+  - `Failed asserting that 1 matches expected -1.`
+    - 期待値 `-1` に対して 実際は 1 が返ってきてるよ
 
 この指摘はその通り.  
 `0 - (-1) = 1` だから.  
