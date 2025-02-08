@@ -22,5 +22,5 @@ There are some commands which are started with `next ...`.
 e.g.) use `"dev": "next dev"` under `scripts` section.
 
 ```
-$ yarn next dev
+$ yarn dev
 ```
