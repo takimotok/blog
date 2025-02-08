@@ -8,12 +8,12 @@ updated_at: ''
 本記事の要点はこんな感じ.
 
 - laravel 環境を docker-compose で構成
-    - nginx, php-fpm, mysql
+  - nginx, php-fpm, mysql
 - nginx と php-fpm は unix ドメインソケット通信
-    - data volume container を作って .sock を共有した
+  - data volume container を作って .sock を共有した
 - ブラウザから http, 80 でアクセス
 - nginx は reverse proxy
-    - nginx で http request を受けて php container へ流す
+  - nginx で http request を受けて php container へ流す
 
 今回残った課題はこのへん.
 
@@ -99,22 +99,22 @@ dir. 構成はこんな感じ.
 ```
 
 - .env
-    - docker-compose.yml 内で利用する環境変数をまとめておくファイル
+  - docker-compose.yml 内で利用する環境変数をまとめておくファイル
 - db
-    - mysql container に関係するファイル郡
-    - `db/mysql/data` はデータ永続化のためにコンテナへマウント
+  - mysql container に関係するファイル郡
+  - `db/mysql/data` はデータ永続化のためにコンテナへマウント
 - docker-compose.yml
-    - 全体的な構成管理を定義
+  - 全体的な構成管理を定義
 - logs
-    - 今回は nginx の log 出力先として利用
+  - 今回は nginx の log 出力先として利用
 - nginx
-    - proxy として利用する設定ファイル郡
+  - proxy として利用する設定ファイル郡
 - php
-    - laravel に関係するファイル群
-    - nginx ⇔ php-fpm 間を unix ドメインソケットで通信するために .conf を用意
-    - ファイル名注意
+  - laravel に関係するファイル群
+  - nginx ⇔ php-fpm 間を unix ドメインソケットで通信するために .conf を用意
+  - ファイル名注意
 - src
-    - git 管理している laravel プロジェクト
+  - git 管理している laravel プロジェクト
 
 ## docker-compose.yml
 
@@ -166,35 +166,35 @@ services:
 
 - `${変数名}` は `.env` ファイルで定義した値が代入される
 - php-fpm-socket
-    - nginx ⇔ php-fpm を unix ドメインソケット通信させるために data volume container として定義
-    - unix ドメインソケットについてはここが詳しい ↓
-    - [調べなきゃ寝れない！と調べたら余計に寝れなくなったソケットの話](https://qiita.com/kuni-nakaji/items/d11219e4ad7c74ece748)
+  - nginx ⇔ php-fpm を unix ドメインソケット通信させるために data volume container として定義
+  - unix ドメインソケットについてはここが詳しい ↓
+  - [調べなきゃ寝れない！と調べたら余計に寝れなくなったソケットの話](https://qiita.com/kuni-nakaji/items/d11219e4ad7c74ece748)
 - `services`
-    - 今回は次の 3 container を用意
-    - nginx
-        - リクエストを php container へ proxy する
-    - php
-        - laravel 用の container として
-        - `artisan`, `npm` コマンドはこの中で打つ
-    - db
-        - ご存知 mysql
+  - 今回は次の 3 container を用意
+  - nginx
+    - リクエストを php container へ proxy する
+  - php
+    - laravel 用の container として
+    - `artisan`, `npm` コマンドはこの中で打つ
+  - db
+    - ご存知 mysql
 - nginx
-    - `nginx.conf`
-        - php-fpm と unix ドメインソケット通信するために実行ユーザを `www-data` にするためだけに用意
-    - `php-fpm-socket:/var/run/php-fpm`
-        - data volume container として `php-fpm-socket` を定義して, `default.conf` 内で .sock の path を指定
+  - `nginx.conf`
+    - php-fpm と unix ドメインソケット通信するために実行ユーザを `www-data` にするためだけに用意
+  - `php-fpm-socket:/var/run/php-fpm`
+    - data volume container として `php-fpm-socket` を定義して, `default.conf` 内で .sock の path を指定
 - php
-    - `./php/php-fpm.d/zzz-www.conf:/usr/local/etc/php-fpm.d/zzz-www.conf`
-        - php-fpm の設定項目をマウント
-        - cf.) [php-fpm.conf のグローバル設定項目](https://www.php.net/manual/ja/install.fpm.configuration.php)
-    - `php-fpm-socket:/var/run/php-fpm`
-        - nginx と unix ドメインソケット通信するために .sock を共有
+  - `./php/php-fpm.d/zzz-www.conf:/usr/local/etc/php-fpm.d/zzz-www.conf`
+    - php-fpm の設定項目をマウント
+    - cf.) [php-fpm.conf のグローバル設定項目](https://www.php.net/manual/ja/install.fpm.configuration.php)
+  - `php-fpm-socket:/var/run/php-fpm`
+    - nginx と unix ドメインソケット通信するために .sock を共有
 - db
-    - `./db/mysql/data:/var/lib/mysql`
-        - mysql データを永続化したいのでマウント
-    - `./db/mysql/conf.d/my.cnf:/etc/mysql/conf.d/my.cnf`
-        - 文字コード定義
-        - sql コマンド打つときに日本語使えないと辛いから `my.cnf` で設定
+  - `./db/mysql/data:/var/lib/mysql`
+    - mysql データを永続化したいのでマウント
+  - `./db/mysql/conf.d/my.cnf:/etc/mysql/conf.d/my.cnf`
+    - 文字コード定義
+    - sql コマンド打つときに日本語使えないと辛いから `my.cnf` で設定
 
 ## .env
 

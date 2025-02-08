@@ -35,13 +35,13 @@ network は2つ作成.
 2つの network に所属する container 内訳はこんな感じ.
 
 - proxy-nw
-    - apache
-    - wp
-    - phpmyadmin
+  - apache
+  - wp
+  - phpmyadmin
 - wp-nw
-    - wp
-    - phpmyadmin
-    - mysql
+  - wp
+  - phpmyadmin
+  - mysql
 
 同時に2つの network に所属させるために `$ docker network connect xxx` コマンドを使用.
 
@@ -50,15 +50,15 @@ nginx は reverse proxy として採用.
 各 uri はこんな想定.
 
 - `/`
-    - 静的ページ
-    - apache container へリクエストを流す
-    - document root は host machine の `./web` dir. へマウント
+  - 静的ページ
+  - apache container へリクエストを流す
+  - document root は host machine の `./web` dir. へマウント
 - `/blog`
-    - wordpress
-    - DB は mysql を採用
+  - wordpress
+  - DB は mysql を採用
 - `/phpmyadmin`
-    - DB の中身を UI で確認したい時に
-    - json とか細かいデータをちょろっと書き換えるときは便利
+  - DB の中身を UI で確認したい時に
+  - json とか細かいデータをちょろっと書き換えるときは便利
 
 logs container は host machine の `./logs` dir. とマウントした data volume container.  
 nginx や 静的ページのログは手元で確認したいから logs container と接続.
@@ -105,9 +105,9 @@ mac の作業 dir. はここ.
 こんな方針で作業を進める.
 
 - docker-compose は使わない
-    - container や image の取り扱い & docker network への理解を深めたいから
+  - container や image の取り扱い & docker network への理解を深めたいから
 - Dockerfile & docker command でゴリゴリ構築する
-    - 理解を優先したいから
+  - 理解を優先したいから
 
 ## 今回のポイントは docker network に慣れること
 
@@ -294,11 +294,11 @@ $ echo "foo" > ./web/index.html
 network の確認方法は 2種類. コマンドはほとんど一緒なんだけどね.
 
 - network に注目する
-    - `$ dokcer network inxpect ネットワーク名`
-    - 出力された中で `Containers` を見ればいい
+  - `$ dokcer network inxpect ネットワーク名`
+  - 出力された中で `Containers` を見ればいい
 - container に注目する
-    - `$ docker container inspect`
-    - 出力された中で `Networks` を見ればいい
+  - `$ docker container inspect`
+  - 出力された中で `Networks` を見ればいい
 
 この network に期待する container が全部所属しているかなー, が知りたければ前者を.  
 この container は期待する network に所属しているかなー, が知りたければ者を.
@@ -772,12 +772,12 @@ proxy-nw に pma, wp, apache, nginx の 4 container が所属している.
 chrome から次の uri へアクセス.
 
 - `localhost/`
-    - `foo` と表示されれば ok
+  - `foo` と表示されれば ok
 - `localhost/blog/`
-    - wp inst. 画面が表示されれば ok
+  - wp inst. 画面が表示されれば ok
 - `localhost/phpmyadmin/`
-    - phpadmin UI が表示されれば ok
-    - `wordpress` って名前の DB が出来上がっているはず
+  - phpadmin UI が表示されれば ok
+  - `wordpress` って名前の DB が出来上がっているはず
 
 log も確認しておく.
 

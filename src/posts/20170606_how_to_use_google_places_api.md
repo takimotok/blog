@@ -13,7 +13,7 @@ Google Places APIが自分の目的に適うかを知りたかったので技術
 ## 参考
 
 - 公式ドキュメント :Google Places API Web Service
-    - https://developers.google.com/places/web-service/intro?hl=ja
+  - https://developers.google.com/places/web-service/intro?hl=ja
 
 ## 動作環境
 
@@ -115,12 +115,12 @@ url作成に関する公式ドキュメントはこちら.
 `output`, `parameters` はこちらで作る必要がある.
 
 - `output` :どの形式でデータを受け取るか. 次のいずれかを指定.
-    - json
-    - xml
+  - json
+  - xml
 - `parameters` :必須パラメータは次の通り
-    - `key` :APIキー
-    - `location` :緯度、経度 の形式で指定
-    - `radius` :検索結果を返す場所の範囲
+  - `key` :APIキー
+  - `location` :緯度、経度 の形式で指定
+  - `radius` :検索結果を返す場所の範囲
 
 APIキーはGoogleDeveloperConsoleで取得・作成したもの.
 

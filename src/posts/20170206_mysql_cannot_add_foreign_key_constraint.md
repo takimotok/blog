@@ -8,7 +8,6 @@ updated_at: ''
 外部キー設定作業中にハマったのでメモ.  
 本記事では外部キーやデバッグの過程についても紹介する.
 
-
 ## 動作環境
 
 - MySQL 5.7.15
@@ -18,11 +17,11 @@ updated_at: ''
 今回は次の2テーブル( `users`, `kinds` )を例に考える.
 
 - DB.users (子テーブル)
-    - id
-    - kind\_id (外部キー)
+  - id
+  - kind\_id (外部キー)
 - DB.kinds (親テーブル)
-    - id (参照されるキー)
-    - kind
+  - id (参照されるキー)
+  - kind
 
 ## 参考
 
@@ -131,9 +130,9 @@ No query specified
 今回の例では
 
 - 親テーブル
-    - kinds
+  - kinds
 - 子テーブル
-    - users
+  - users
 
 ## 外部キーを使う条件
 
@@ -209,7 +208,7 @@ ALTER TABLE users ADD CONSTRAINT users_fk_1 FOREIGN KEY (kind_id) REFERENCES kin
 エラー内容は次の場所で確認可能.
 
 - `SHOW ENGINE INNODB STATUS;`
-    - LATEST FOREIGN KEY ERROR
+  - LATEST FOREIGN KEY ERROR
 
 エラー内容は次の通り.
 

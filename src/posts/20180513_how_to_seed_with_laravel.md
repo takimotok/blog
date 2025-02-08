@@ -71,17 +71,17 @@ $ tree -d ./database/
 seedingを行う上でダミーデータを生成する際, 直接関係するのは次のディレクトリにあるファイルだ.
 
 - /database/
-    - factories
-    - seeds
+  - factories
+  - seeds
 
 各ディレクトリに置くファイルの役割は次の通り.
 
 - /database/factories
-    - ダミーデータの「もと」をここで作る
-    - ダミーデータを簡単に利用するために `Faker` を利用する
+  - ダミーデータの「もと」をここで作る
+  - ダミーデータを簡単に利用するために `Faker` を利用する
 - /database/seeds
-    - 基本的には 「ダミーデータをいくつ挿入したいか」 だけを記述する
-    - もし中間テーブルへダミーデータを突っ込みたい場合は, ここのファイルで定義する
+  - 基本的には 「ダミーデータをいくつ挿入したいか」 だけを記述する
+  - もし中間テーブルへダミーデータを突っ込みたい場合は, ここのファイルで定義する
 
 細かいことは無視していい.  
 基本的にはこの2つのディレクトリがseeder実行時に関係してくることを意識する.  
@@ -196,17 +196,17 @@ Create Table: CREATE TABLE `shops` (
 
 - 飲食店情報を格納したい
 - 外部キー
-    - user\_id
-    - grade\_id
-    - place\_id
+  - user\_id
+  - grade\_id
+  - place\_id
 - latlng
-    - 緯度経度
+  - 緯度経度
 - corp\_name
-    - 企業名
+  - 企業名
 - open
-    - 開店時刻
+  - 開店時刻
 - close
-    - 閉店時刻
+  - 閉店時刻
 - created\_at
 - updated\_at
 
@@ -275,14 +275,14 @@ $factory->define(App\Shop::class, function (Faker\Generator $faker) {
 いくつかポイントだと思う箇所を解説.
 
 - `use Carbon\Carbon;`
-    - 日付, 時刻 を簡単に扱いたいから `Carbon` を利用
+  - 日付, 時刻 を簡単に扱いたいから `Carbon` を利用
 - `$factory->define(App\Shop::class, function (Faker\Generator $faker) {xxx}`
-    - ダミーデータを突っ込みたいのは `DB.shops`
-        - だから `App\Shop::class` を指定
-    - ダミーデータ生成を楽に行うために `Faker` を利用
+  - ダミーデータを突っ込みたいのは `DB.shops`
+    - だから `App\Shop::class` を指定
+  - ダミーデータ生成を楽に行うために `Faker` を利用
 - `$userIDs = App\User::pluck('id')->all();`
 - `$gradeIDs = App\Grade::pluck('id')->all();`
-    - 外部キーはこうやって持ってこれる
+  - 外部キーはこうやって持ってこれる
 
 記述方法については以上.
 
@@ -321,13 +321,13 @@ class ShopsTableSeeder extends Seeder
 ここでも気になるポイントだけ解説.
 
 - `run()`
-    - seederファイル生成時に勝手に用意されている
+  - seederファイル生成時に勝手に用意されている
 - `factory()`
-    - モデルファクトリで定義したダミーデータの「もと」を指定
-    - `10`
-        - ここでは 10レコード ダミーデータを挿入する
+  - モデルファクトリで定義したダミーデータの「もと」を指定
+  - `10`
+    - ここでは 10レコード ダミーデータを挿入する
 - `create()`
-    - 作るよっ, って合図
+  - 作るよっ, って合図
 
 seederファイル記述内容については以上.
 

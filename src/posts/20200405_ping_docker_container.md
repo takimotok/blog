@@ -23,7 +23,7 @@ updated_at: ''
 次の本を参照しながら進める.
 
 - 『自宅ではじめるDocker入門』
-    - 第2章
+  - 第2章
 
 事前に docker をホストマシンに inst. 済 の状態から進める.
 
@@ -47,7 +47,7 @@ updated_at: ''
 
 - ubuntu image でコンテナを立てる
 - localhost に向けて ping を打つ
-    - package が必要なので apt で repo. 更新とか
+  - package が必要なので apt で repo. 更新とか
 
 ## image 削除
 

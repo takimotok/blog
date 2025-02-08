@@ -22,20 +22,18 @@ Laravelで多対多のデータを扱いたい.
 ### 前提条件
 
 - 次のファイルは設定済みとする.  
-    - `.env`
-    - `database.php`
+  - `.env`
+  - `database.php`
 - 今回使用するテーブルは次の2つ
-    - `facilities`
-    - `shops`
+  - `facilities`
+  - `shops`
 
 この2テーブルは既にDBに存在するものとする.  
 中間テーブルはまだ存在しない状態.
 
-
 ## 参考
 
 - [多対多 | readouble.com](https://readouble.com/laravel/5.3/ja/eloquent-relationships.html#many-to-many)
-
 
 ## 手順
 
@@ -59,7 +57,6 @@ Laravelで多対多のデータを扱いたい.
 を利用する.
 
 さて, そもそも多対多のrelationを考えるうえで大切なことは
-
 
 ということ.  
 
@@ -236,7 +233,6 @@ class Shop extends Model
 - facilities
 - shops
 - facility\_shop
-
 
 #### facilities
 
